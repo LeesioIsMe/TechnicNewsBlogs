@@ -1,0 +1,1054 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    clear: both;
+    content: '';
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.header {
+    background: #333;
+    font-size: 12px;
+}
+
+.header .hdtop {
+    width: 1000px;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    background: #333;
+    position: relative;
+}
+
+.header .hdtop .bglogo {
+    float: left;
+    background-image: url(../../images/mil/images//bglogo.png);
+    width: 155px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header .hdtop ul {
+    float: right;
+}
+
+.header .hdtop ul li {
+    float: left;
+    margin-left: 10px;
+    width: 62px;
+    height: 45px;
+    text-align: center;
+}
+
+.header .hdtop ul li a {
+    color: #fff;
+}
+
+.header .login {
+    background: #917347;
+    width: unset !important;
+    float: right;
+    padding:0 20px;
+}
+
+.header .login img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.header .me {
+    background: rgba(0, 0, 0, 0.3);
+    height: 50px;
+}
+
+.header .account a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header .logout a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#smlogo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -5px;
+    left: -10px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+#logo {
+    display: none;
+}
+
+.header .hdtop .logo {
+    width: 115px;
+    height: 40px;
+    background: #4e4e4e;
+    position: relative;
+}
+
+.header .hdtop .register:hover {
+    background: #999;
+}
+
+.header .hdnav {
+    background-image: url(../../images/mil/images//worldMainNav.png);
+    width: 100%;
+    height: 70px;
+    font-size: 16px;
+    position: relative;
+}
+
+.header .me {
+    height: 100%;
+}
+
+.header .hdnav ul {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .hdnav ul li {
+    padding: 5px 10px;
+    /* float: left; */
+    position: relative;
+}
+
+.header .hdnav ul li.active .rectangle {
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+}
+
+.header .hdnav ul li.active {
+    background: #1a6f99;
+    border-radius: 5px;
+}
+
+.header .hdnav ul li.active a {
+    color: #fff;
+}
+
+.header .hdnav ul li a {
+    color: #333;
+}
+
+.header .hdnav ul li a:hover {
+    color: green;
+}
+
+.header .hdnav form div {
+    position: absolute;
+    top: 20px;
+    right: 430px;
+    width: 190px;
+    height: 30px;
+    background: url(../../images/mil/images//bgSear.png) no-repeat;
+    cursor: pointer;
+}
+
+.header .hdnav form div input {
+    width: 130px;
+    height: 30px;
+    outline: none;
+    border: none;
+    padding: 0 0 0 5px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.content {
+    width: 1100px;
+    margin: 0 auto;
+    color: #333;
+    padding: 30px 0;
+    background: #fff;
+}
+
+.adver {
+    width: 998px;
+    margin: 50px auto;
+    position: relative;
+    height: 106px;
+    font-size: 12px;
+}
+
+.adver:nth-child(1) {
+    margin-top: 0;
+}
+
+.adver ul {
+    margin: 0 auto;
+    display: flex;
+    height: 106px;
+    /* display: none; */
+    border: 1px solid #ccc;
+    justify-content: space-around;
+    padding: 3px 10px;
+}
+
+.adver ul li {
+    width: 133px;
+    height: 98px;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.adver ul li a {
+    color: #fff;
+    text-align: center;
+}
+
+.adver ul li span {
+    display: inline-block;
+}
+
+.adver ul li img {
+    width: 100%;
+}
+
+.adver .one span {
+    width: 100%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 20px;
+}
+
+.adver .two {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 133px;
+    height: 94px;
+    z-index: 100;
+    padding: 20px 0;
+    display: none;
+}
+
+.adver .two span {
+    display: block;
+    width: 100px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.adver .two span:nth-of-type(1) {
+    border: 1px solid #fff;
+}
+
+.adver .two .adverbg {
+    width: 70px;
+    height: 20px;
+    margin-top: 5px;
+    display: block;
+    background-image: url(../../images/mil/images//adver/bg.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.adver .closebg {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 60px;
+    height: 16px;
+    z-index: 100;
+    background-color: rgba(88, 88, 88, 0.5);
+    background-image: url(../../images/mil/images//adver/logo_9f55db2.png);
+    background-repeat: no-repeat;
+    background-position: 10px 3px;
+}
+
+.adver .closebg a {
+    background-image: url(../../images/mil/images//adver/close_9d33a11.png);
+    background-repeat: no-repeat;
+    background-position: 3px 4px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-left: 1px solid #ccc;
+}
+
+.adver .feedback {
+    width: 300px;
+    margin: 0 auto;
+    height: 90px;
+    display: none;
+}
+
+.adver .feedback .title {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.adver .feedback .fbItems a {
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    line-height: 26px;
+    color: #666;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.adver .feedback .return {
+    margin-top: 10px;
+}
+
+.adver .feedback .return a {
+    color: #3389e3;
+}
+
+.slideNews {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.slideNews h1 {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.slideNews h1 a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 36px;
+    color: #395f86;
+}
+
+.slideNews h1 a:hover {
+    text-decoration: underline;
+    color: #d00005;
+}
+
+.slideNews .slider {
+    width: 600px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    position: relative;
+    float: left;
+}
+
+.slideNews .slider ul {
+    overflow: hidden;
+    height: 330px;
+}
+
+.slideNews .slider ul li {
+    float: left;
+    position: relative;
+}
+
+.slideNews .slider li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.slideNews .slider li span {
+    padding: 0 0 0 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.slideNews .slider li span:hover {
+    text-decoration: underline;
+}
+
+.slideNews .slider img {
+    width: 100%;
+}
+
+.slideNews .dot {
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+}
+
+.slideNews .dot a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    margin-right: 5px;
+}
+
+.slideNews .dot a.current {
+    background: #4c99e8;
+}
+
+.slideNews .btn a {
+    display: inline-block;
+    width: 34px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 140px;
+    z-index: 100;
+}
+
+.slideNews .btn .prev {
+    left: 5px;
+}
+
+.slideNews .btn i {
+    display: inline-block;
+    width: 34px;
+    height: 56px;
+    margin-top: 7px;
+    background-image: url(../../images/mil/images//sliderNews/arrLeftFocus.png);
+}
+
+.slideNews .btn a:nth-of-type(2) i {
+    background-image: url(../../images/mil/images//sliderNews/arrRigFocus.png);
+}
+
+.slideNews .btn .next {
+    right: 5px;
+}
+
+.slideNews .btn div {
+    position: absolute;
+    top: 140px;
+    width: 105px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    cursor: pointer;
+}
+
+.slideNews .btn div img {
+    width: 100px;
+    position: absolute;
+    top: 7px;
+}
+
+.slideNews .btn .prev-img {
+    left: 39px;
+}
+
+.slideNews .btn .prev-img img {
+    left: 0;
+}
+
+.slideNews .btn .next-img {
+    right: 39px;
+}
+
+.slideNews .btn .next-img img {
+    right: 0;
+}
+
+.slideNews .sideNews {
+    float: right;
+    width: 360px;
+}
+
+.slideNews .sideNews a {
+    color: #333;
+}
+
+.slideNews .sideNews li {
+    height: 112px;
+    padding: 8px 0 8px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.slideNews .sideNews a:hover {
+    text-decoration: underline;
+}
+
+.slideNews .sideNews h4 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.slideNews .sideNews h4 a:hover {
+    color: darkred;
+}
+
+.slideNews .sideNews p {
+    font-size: 14px;
+    color: #999;
+}
+
+.slideNews .sideNews .detail {
+    color: darkred;
+    letter-spacing: 3px;
+}
+
+.search {
+    float: right;
+    height: 30px;
+    font-size: 0;
+}
+
+.search input {
+    width: 255px;
+    height: 30px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    font-size: 14px;
+    padding-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.search button {
+    background: #aaa;
+    color: #fff;
+    border: none;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.weapon {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.weapon h2 {
+    width: 650px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.weapon h2 a {
+    font-size: 24px;
+    color: #6c8051;
+}
+
+.weapon h2 span {
+    color: #395f86;
+}
+
+.weapon h2 span:hover {
+    color: darkred;
+}
+
+.weapon-list {
+    width: 1000px;
+    margin: 20px auto;
+    height: 82px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+}
+
+.weapon-list li {
+    transition: left 0.2s ease-out;
+    position: absolute;
+    top: 0;
+}
+
+.weapon-list .item-title {
+    width: 125px;
+    height: 80px;
+    background: url(../../images/mil/images//weapon/weapNormal.png) no-repeat;
+    float: left;
+    cursor: pointer;
+}
+
+.weapon-list .item-title a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.weapon-list li:hover .item-title {
+    background: url(../../images/mil/images//weapon/weapOver.png) no-repeat;
+}
+
+.weapon-list .item-content {
+    width: 0px;
+    height: 80px;
+    float: left;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    font-size: 14px;
+    transition: width 0.2s ease-out;
+}
+
+.weapon-list li.active .item-content {
+    width: 650px;
+}
+
+.weapon-list .item-content a {
+    display: inline-block;
+    color: #333;
+    padding: 0 5px;
+    margin: 10px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.weapon-list .item-content a:hover {
+    background: #917347;
+    color: #fff;
+}
+
+.weapon-list .i2 {
+    background-position: 0 -80px;
+}
+
+.weapon-list li:hover .i2 {
+    background-position: 0 -80px;
+}
+
+.weapon-list .i3 {
+    background-position: 0 -160px;
+}
+
+.weapon-list li:hover .i3 {
+    background-position: 0 -160px;
+}
+
+.weapon-list .i4 {
+    background-position: 0 -240px;
+}
+
+.weapon-list li:hover .i4 {
+    background-position: 0 -240px;
+}
+
+.weapon-list .i5 {
+    background-position: 0 -320px;
+}
+
+.weapon-list li:hover .i5 {
+    background-position: 0 -320px;
+}
+
+.weapon-list .i6 {
+    background-position: 0 -400px;
+}
+
+.weapon-list li:hover .i6 {
+    background-position: 0 -400px;
+}
+
+.weapon-list .i7 {
+    background-position: 0 -480px;
+}
+
+.weapon-list li:hover .i7 {
+    background-position: 0 -480px;
+}
+
+.weapon-list .i8 {
+    background-position: 0 -560px;
+}
+
+.weapon-list li:hover .i8 {
+    background-position: 0 -560px;
+}
+
+.milNews {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between
+}
+
+.milNews .dynamic {
+    width: 340px;
+    overflow:hidden;
+}
+
+.dynamic h3, .pattern h3, .cm h3, .fastNews h3, .picNews h3 {
+    font-size: 18px;
+    border-bottom: 1px solid #44650b;
+}
+
+.dynamic h3 a, .pattern h3 a, .cm h3 a, .fastNews h3 a, .picNews h3 a {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-weight: normal;
+    padding: 0 3px;
+}
+
+.dynamic h3 a:first-child, .pattern h3 a:first-child, .cm h3 a:first-child, .fastNews h3 a:first-child, .picNews h3 a:first-child {
+    float: left;
+    color: #44650b;
+    border-bottom: 1px solid #44650b;
+}
+
+.dynamic h3 a:first-child:hover, .pattern h3 a:first-child:hover, .cm h3 a:first-child:hover, .fastNews h3 a:first-child:hover, .picNews h3 a:first-child:hover {
+    color: darkred;
+}
+
+.dynamic h3 a:last-child, .pattern h3 a:last-child, .cm h3 a:last-child, .fastNews h3 a:last-child, .picNews h3 a:last-child {
+    float: right;
+    font-size: 12px;
+    color: #333;
+}
+
+.dynamic h3 a:last-child:hover, .pattern h3 a:last-child:hover, .cm h3 a:last-child:hover, .fastNews h3 a:last-child:hover, .picNews h3 a:last-child:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.dynamic li:not([class=".firstNews"]), .pattern li:not([class=".firstNews"]), .cm li:not([class=".firstNews"]) {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.dynamic li:not([class=".firstNews"]) a, .pattern li:not([class=".firstNews"]) a, .cm li:not([class=".firstNews"]) a {
+    color: #002244;
+    font-family: "宋体";
+}
+
+.dynamic li:not([class=".firstNews"]) a:hover, .pattern li:not([class=".firstNews"]) a:hover, .cm li:not([class=".firstNews"]) a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.dynamic .firstNews>a, .pattern .firstNews>a, .cm .firstNews>a {
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    margin: 10px 0;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+.dynamic .firstNews>a:link, .pattern .firstNews>a:link, .cm .firstNews>a:link {
+    color: #5f789e;
+}
+
+.dynamic .firstNews>a:visited, .pattern .firstNews>a:visited, .cm .firstNews>a:visited {
+    color: #5f789e;
+}
+
+.dynamic .firstNews>a:hover, .pattern .firstNews>a:hover, .cm .firstNews>a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+.dynamic .firstNews .firstDetail img, .pattern .firstNews .firstDetail img, .cm .firstNews .firstDetail img {
+    width: 120px;
+    height: 80px;
+    margin: 0 10px 10px 0;
+    float: left;
+    display: block;
+}
+
+.dynamic .firstNews .firstDetail div, .pattern .firstNews .firstDetail div {
+    float: right;
+    width: 208px;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    font-family: "宋体";
+}
+
+.dynamic .firstNews .firstDetail div a, .pattern .firstNews .firstDetail div a, .cm .firstNews .firstDetail div a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #d00005;
+    cursor: pointer;
+}
+
+.dynamic .firstNews .firstDetail div a:hover, .pattern .firstNews .firstDetail div a:hover, .cm .firstNews .firstDetail div a:hover {
+    text-decoration: underline;
+}
+
+.milNews .pattern {
+    width: 340px;
+}
+
+.milNews .cm {
+    width: 260px;
+}
+
+.cm h3 {
+    background: url(../../images/mil/images//milNews/mil2015.png);
+    background-position: 0 -175px;
+    padding: 0 5px;
+}
+
+.cm h3 a {
+    color: #fff !important;
+}
+
+.cm .firstNews .firstDetail div {
+    float: right;
+    width: 128px;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    font-family: "宋体";
+}
+
+.cm .firstNews>a {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    color: #295285;
+    overflow: hidden;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.cm li:not([class="firstNews"]) {
+    font-size: 12px !important;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.cm .bigImg {
+    margin-top: 20px;
+}
+
+.cm .bigImg img {
+    width: 260px;
+    height: 130px;
+}
+
+.fastNews, .picNews {
+    width: 1000px;
+    margin: 30px auto;
+}
+
+.fastNews ul, .picNews ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 14px;
+    text-align: center;
+}
+
+.fastNews ul li, .picNews ul li {
+    width: 320px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.fastNews ul li a, .picNews ul li a {
+    color: #333;
+}
+
+.fastNews ul li a:hover, .picNews ul li a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.fastNews ul li img, .picNews ul li img {
+    width: 320px;
+    height: 213px;
+    ;
+}
+
+.fastNews ul li a div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 213px;
+}
+
+.fastNews ul li a div img {
+    margin-top: 70px;
+    width: 75px;
+    height: 75px;
+    /* background:rgba(0, 0, 0, 0.5); */
+}
+
+.fastNews ul li a div:hover {
+    background: rgba(0, 0, 0, 0);
+}
+
+.footer {
+    background: #0a70b1;
+}
+
+.footer .product {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer .product dl {
+    margin: 10px 0;
+    padding: 0 40px;
+    border-left: 1px solid #3288bf;
+}
+
+.footer .product dl dt {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer .product .dl1 {
+    width: 200px;
+}
+
+.footer .product .dl2 {
+    width: 300px;
+}
+
+.footer .product .dl2 dd {
+    width: 100px;
+    margin-right: 9px;
+}
+
+.footer .product .dl3 {
+    width: 500px;
+}
+
+.footer .product .dl3 dd {
+    padding: 0 10px 0 0;
+    margin-right: 10px;
+}
+
+.footer .product dl dd {
+    float: left;
+    font-size: 12px;
+}
+
+.footer .product dl dd a {
+    color: #89c3eb;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+
+.footer .product dl dd a:hover {
+    color: #f0f0f0;
+}
+
+.footer .product dl dd a:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    background-image: url(../../images/mil/images//icon2.png);
+    background-position: 0 -173px;
+    display: inline-block;
+}
+
+.links {
+    background: #f0f0f0;
+}
+
+.links div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.links div ul {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.links div ul li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.links div ul li:after {
+    content: "/";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    color: #999;
+}
+
+.links div ul li a {
+    color: #666;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.links div ul li a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.scrollBar {
+    width: 70px;
+    height: 70px;
+    background: url(../../images/mil/images//index.png) -80px -747px no-repeat;
+    position: absolute;
+}

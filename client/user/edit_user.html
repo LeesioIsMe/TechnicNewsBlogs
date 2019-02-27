@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改资料</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/edit_user.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/jquery.html5uploader.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg">
+            <div class="header">
+                <div class="logo">
+                    <a href="personal.html">个人中心</a>
+                </div>
+                <div class="me">
+                    <span class="account"><a href="personal.html" id="account">13462229618</a></span>
+                    <img id="smlogo" src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="info">
+                <form id="editForm">
+                    <div class="group">
+                        <label for="name">姓名<span></span></label>
+                        <input type="text" name="name">
+                    </div>
+
+                    <div class="group">
+                        <label for="nickName">昵称<span></span></label>
+                        <input type="text" name="nickName">
+                    </div>
+
+                    <div class="group">
+                        <label for="phone">手机号<span></span></label>
+                        <input type="text" name="phone">
+                    </div>
+
+                    <div class="group">
+                        <label for="email">邮箱<span></span></label>
+                        <input type="text" name="email">
+                    </div>
+
+                    <div class="group">
+                        <label for="technical">技术<span></span></label>
+                        <input type="text" name="technical">
+                    </div>
+                    <div class="group">
+                        <label for="blogWeb">博客<span></span></label>
+                        <input type="text" name="blogWeb">
+                    </div>
+                    <div class="btn">
+                        <a href="javascript:;" id="btnEditTemp">提交</a>
+                    </div>
+                    <button id="btnEdit" style="display:none;"></button>
+                </form>
+            </div>
+            <div class="sideImg">
+                <div id="box"><img src="/images/upload.jpg" alt=""></div>
+                <input id="logo" type="file">
+                <div class="title">修改头像</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+
+        })
+    </script>
+    <script>
+        $(function () {
+            console.log($.cookie("userInfo"))
+            var logo = JSON.parse($.cookie("userInfo")).logo;
+            var account = $.cookie("account");
+            $("#smlogo").attr("src", logo);
+            $("#account").text(account);
+            $("#btnEditTemp").click(() => {
+                $("#btnEdit").trigger("click")
+            })
+            $("#editForm").submit(function (e) {
+                e.preventDefault();
+                $.post(`${host}/users/editUser`, $("#editForm").serialize()).done(data => {
+                    console.log(data);
+                    if (data.code != 200) {
+                        layer.alert(data.message, {
+                            icon: 2,
+                            title: "提示"
+                        })
+                        return;
+                    }
+                    $.cookie("userInfo", JSON.stringify(data.userInfo))
+                    location.href = "personal.html";
+                }).fail(err => {
+                    throw err;
+                })
+            })
+            $("#box").click(function () {
+                $("#logo").trigger("click")
+            })
+            checkLogin();
+            $("#box,#logo").html5Uploader({
+                name: "foo",
+                postUrl: `${host}/users/upload`,
+                onSuccess: function (data, file, data) {
+                    console.log(data);
+                    data = JSON.parse(data);
+                    $.cookie("userInfo", JSON.stringify(data.userInfo))
+                    console.log(data);
+                    if (data.code == 202) {
+                        location.href = 'login.html'
+                        return;
+                    }
+                    $("#box").html(`
+                            <img src="${data.logoPath}">
+                        `)
+                    $("#smlogo").attr("src", data.logoPath);
+                    layer.alert("修改头像成功", {
+                        icon: 1,
+                        title: "成功"
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

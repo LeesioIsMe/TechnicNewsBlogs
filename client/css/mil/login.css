@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    background: url(../images/login/header_footer_bg.png) repeat-x;
+    padding: 10px 0 0 0;
+    color: #333;
+}
+
+.header {
+    width: 970px;
+    margin: 0px auto;
+    height: 70px;
+    line-height: 70px;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    font-size: 0;
+}
+
+.logo a:first-child {
+    display: block;
+    margin-right: 10px;
+    float: left;
+    width: 150px;
+    height: 70px;
+    margin-top: -2px;
+    background: url(../images/login/public_img_png24.png) 0 0 no-repeat;
+}
+
+.logo a:last-child {
+    display: block;
+    padding-left: 20px;
+    float: left;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 26px;
+    margin-top: -2px;
+    position: relative;
+}
+
+.logo a:last-child:before {
+    content: "";
+    border-left: 1px solid #ccc;
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+
+.menu {
+    float: right;
+}
+
+.content {
+    background: #f7f7f7;
+}
+
+.content form {
+    height: 442px;
+    margin: 0 auto;
+    width: 970px;
+    background: url(../images/login/loginMain_bg.png) no-repeat;
+}
+
+.mainpage {
+    float: right;
+    width: 400px;
+    padding: 25px 37px;
+    position: relative;
+}
+
+.title h2 {
+    line-height: 58px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.mainpage .group, .mainpage .title {
+    height: 58px;
+    line-height: 58px;
+}
+
+#username, #password {
+    margin-left: 40px;
+}
+
+.group input:not([type="checkbox"]) {
+    height: 30px;
+    line-height: 30px;
+    width: 276px;
+    outline: none;
+    border: none;
+}
+
+.autoLogin {
+    height: 40px !important;
+    margin-top: 20px;
+}
+
+.autoLogin .rem {
+    font-size: 14px;
+    color: #5e5e5e;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+.autoLogin .reg {
+    float: right;
+    font-size: 14px;
+    color: #5e5e5e;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 5px;
+}
+
+.autoLogin .reg a:first-child {
+    color: #919191;
+}
+
+.autoLogin .reg a:last-child {
+    color: #007ed7;
+}
+
+.btn button {
+    width: 320px;
+    margin: 0 auto;
+    background: #007ed7;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.access .acc-t {
+    height: 46px !important;
+    line-height: 46px;
+    font-size: 14px;
+}
+
+.access div:last-child a {
+    display: inline-block;
+    width: 50px;
+    height: 32px;
+    background: url(../images/login/public_img_png24.png) no-repeat;
+}
+
+.access div:last-child .a1 {
+    background-position: 0 -88px;
+}
+
+.access div:last-child .a2 {
+    background-position: 0 -128px;
+}
+
+.access div:last-child .a3 {
+    background-position: 0 -168px;
+}
+
+.access div:last-child .a4 {
+    background-position: 0 -208px;
+}
+
+.access div:last-child .a5 {
+    background-position: 0 -248px;
+}
+
+.access div:last-child .a6 {
+    width: 32px;
+    background-position: right -248px;
+}
+
+.alert {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333;
+    background: #fffcb5;
+    text-align: center;
+    position: relative;
+}
+
+.alert .close {
+    width: 20px;
+    height: 20px;
+    background: url(../images/login/public_img_png24.png) -315px -373px no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    background: #0a70b1;
+}
+
+.footer .product {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer .product dl {
+    margin: 10px 0;
+    padding: 0 40px;
+    border-left: 1px solid #3288bf;
+}
+
+.footer .product dl dt {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer .product .dl1 {
+    width: 200px;
+}
+
+.footer .product .dl2 {
+    width: 300px;
+}
+
+.footer .product .dl2 dd {
+    width: 100px;
+    margin-right: 9px;
+}
+
+.footer .product .dl3 {
+    width: 500px;
+}
+
+.footer .product .dl3 dd {
+    padding: 0 10px 0 0;
+    margin-right: 10px;
+}
+
+.footer .product dl dd {
+    float: left;
+    font-size: 12px;
+}
+
+.footer .product dl dd a {
+    color: #89c3eb;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+
+.footer .product dl dd a:hover {
+    color: #f0f0f0;
+}
+
+.footer .product dl dd a:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    background-image: url(../images/icon2.png);
+    background-position: 0 -173px;
+    display: inline-block;
+}
+
+.links {
+    background: #f0f0f0;
+}
+
+.links div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.links div ul {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.links div ul li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.links div ul li:after {
+    content: "/";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    color: #999;
+}
+
+.links div ul li a {
+    color: #666;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.links div ul li a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.scrollBar {
+    width: 70px;
+    height: 70px;
+    background: url(../images/index.png) -80px -747px no-repeat;
+    position: absolute;
+}

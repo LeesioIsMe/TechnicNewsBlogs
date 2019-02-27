@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册账号</title>
+    <link rel="stylesheet" href="../css/reg.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg">
+            <div class="header">
+                <div class="title">
+                    注册账号
+                </div>
+                <div class="options">
+                    已有账号？马上<a href="login.html"> 登录 </a>
+                    <i class="sep"></i> <a href="../index.html">首页</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="info">
+                <form id="regForm">
+                    <div class="group">
+                        <label for="account">账号<span></span></label>
+                        <input type="text" name="account" id="account">
+                    </div>
+
+                    <div class="group">
+                        <label for="pwd1">密码<span></span></label>
+                        <input type="password" name="password" id="pwd1">
+                    </div>
+
+                    <div class="group">
+                        <label for="pwd2">确认密码<span></span></label>
+                        <input type="password" name="confirmPassword" id="pwd2">
+                        <div id="imgCode"></div>
+                    </div>
+                    <div class="group">
+                        <label for="email">邮箱<span></span></label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="group captcha">
+                        <label for="captcha">验证码<span></span></label>
+                        <input type="text" name="captcha" id="captcha">
+                        <div id="imgCode"></div>
+                    </div>
+
+                    <div class="btn">
+                        <a href="javascript:;" id="btnRegTemp">提交</a>
+                    </div>
+                    <button id="btnReg" style="display:none;"></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+            getImgCode();
+            $("#btnRegTemp").click(function () {
+                $("#btnReg").trigger("click")
+            })
+            $("#imgCode").on("click", "svg", function () {
+                getImgCode();
+            });
+            $("#regForm").submit(function (ev) {
+                ev.preventDefault();
+                if ($("#pwd1").val() != $("#pwd2").val()) {
+                    layer.alert("两次密码不一致", {
+                        icon: 2,
+                        title: "错误"
+                    })
+                    return;
+                }
+                if(!$("#email").text().trim()){
+                    layer.alert("邮箱必填",{
+                        icon:4,
+                        title:"错误"
+                    })
+                }
+                console.log($("#captcha").val())
+                $.post(`${host}/users/register`, $(this).serialize()).done(function (data) {
+                    console.log(data);
+                    if (data.code != 200) {
+                        layer.alert(data.message, {
+                            icon: 2,
+                            title: "提示"
+                        })
+                        return;
+                    }
+                    layer.alert("注册成功，3秒后跳转至<a href='login.html'>登录</a>", {
+                        icon: 1,
+                        title: "提示"
+                    })
+                    setTimeout(function () {
+                        location.href = "login.html";
+                    }, 3000)
+                }).fail(function (err) {
+                    throw err;
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

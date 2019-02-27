@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <%- data.content.substr(0,data.content.length-1) %>
+  </div>
+  <script>
+    var time = 0;
+    setInterval(function () {
+      time++;
+      if (time == 30) {
+        read = data.content.read - 0 + 1;
+
+        $.post("/articles/updateArticle", { read }).done(data => {
+
+        })
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

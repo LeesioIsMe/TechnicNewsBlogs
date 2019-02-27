@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    background: url(../images/login/header_footer_bg.png) repeat-x;
+    padding: 10px 0 0 0;
+    color: #333;
+}
+
+.header {
+    width: 970px;
+    margin: 0px auto;
+    height: 70px;
+    line-height: 70px;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    font-size: 0;
+}
+
+.logo a:first-child {
+    display: block;
+    margin-right: 10px;
+    float: left;
+    width: 150px;
+    height: 70px;
+    margin-top: -2px;
+    background: url(../images/login/public_img_png24.png) 0 0 no-repeat;
+}
+
+.logo a:last-child {
+    display: block;
+    padding-left: 20px;
+    float: left;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 26px;
+    margin-top: -2px;
+    position: relative;
+}
+
+.logo a:last-child:before {
+    content: "";
+    border-left: 1px solid #ccc;
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+
+.menu {
+    float: right;
+}
+
+.alert {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333;
+    background: #fffcb5;
+    text-align: center;
+    position: relative;
+}
+
+.alert .close {
+    width: 20px;
+    height: 20px;
+    background: url(../images/login/public_img_png24.png) -315px -373px no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.content {
+    background: #f5f5f5;
+}
+
+.content .register{
+    width: 970px;
+    margin: 0 auto;
+    padding:40px;
+    background:#fff;
+    border-radius:10px;
+    height:700px;
+}
+.register form{
+    width:650px;
+    margin:0 auto;
+}
+
+.register form .group{
+    height:50px;
+    line-height:50px;
+    margin-bottom:15px;
+}
+.register form .group label{
+    display:inline-block;
+    width:100px;
+    color:#333;
+    font-size:16px;
+    text-align: left;
+}
+.register form .group input{
+    width:252px;
+    height:40px;
+    border:1px solid #ccc;
+    outline: none;
+    padding:0 0 0 5px;
+}
+.register form .imgCode label,.register form .imgCode input,.register form .imgCode span{
+    float:left;
+}
+.register form .imgCode input{
+    width:140px;
+    margin:7px 0px 0 4px;
+}
+.register form .imgCode span{
+    display:inline-block;
+    width:100px;
+    height: 40px;
+    line-height:40px; 
+    padding:0 0 0 3px;
+    margin:6px 0 0 10px;
+    border:1px solid #ccc;
+    border-radius:3px;
+}
+.register form .imgCode span img{
+    display:inline-block;
+    width:60px;
+    height:38px;
+    margin-left:-3px;
+}
+.register form .imgCode i{
+    display:inline-block;
+    height:38px;
+    width:35px;
+    background:url(../images/public_img_png24.png) -47px -125px no-repeat;
+    cursor: pointer;
+}
+
+.username div{
+    float:left;
+}
+.username div a{
+    display:inline-block;
+    padding:0 10px;
+    height:40px;
+    line-height:40px;
+    font-size:14px;
+    border-radius: 5px;
+    background:#0a70b1;
+    margin:7px 0 0 10px;
+    color:#fff;
+    cursor: pointer;
+}
+.username .send.active a,.username .send.wrong a{
+    background:#ccc;
+}
+.username div i{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin-left:10px;
+    background:url(../images/public_img_png24.png) -318px -323px no-repeat;
+    display:none;
+}
+.username .send span{
+    display:none;
+}
+.username .send.wrong span{
+    display:inline;
+    color:red;
+}
+.username .send.wrong i{
+    display:inline-block;
+    background: url(../images/public_img_png24.png) -318px -373px no-repeat;
+}
+
+.password{
+    position: relative;
+}
+.password .info{
+    position: absolute;
+    top:0px;
+    right:230px;
+}
+
+.password .info .errInfo{
+    color:red;
+    display:inline-block;
+    line-height:30px;
+    height:30px;
+    display:none;
+
+}
+.password .info .rightInfo{
+    color:#6bbc09;
+    display:inline-block;
+    line-height:30px;
+    height:30px;
+}
+.password .info i{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    position: relative;
+    top:2px;
+    background: url(../images/public_img_png24.png) -318px -373px no-repeat;
+}
+.password .info .rightInfo i{
+    background: url(../images/public_img_png24.png) -318px -323px no-repeat;
+}
+.password .info .rightInfo b{
+    font-weight: normal;
+}
+.password .info span{
+    display:none !important;
+}
+.password .seePwd{
+    display:inline-block;
+    position: absolute;
+    width:16px;
+    height:16px;
+    top:20px;
+    left:335px;
+    cursor: pointer;
+    background:url(../images/register/public_ico_see_password.png) center 0 no-repeat;
+}
+.password .seePwd:hover{
+    background:url(../images/register/public_ico_see_password.png) center -17px no-repeat;
+}
+.agree{
+    padding:0 80px;
+}
+.agree label{
+    font-size:12px !important;
+    color:#333;
+    width:unset !important;
+    height:unset !important;
+    line-height: unset !important;
+}
+.agree input{
+    width: unset !important;
+    height:unset !important;
+    position: relative;
+    top:2px;
+}
+.agree label a{
+    color:#007ed7;
+}
+.agree label a:hover{
+    text-decoration: underline;
+}
+
+.regBtn button{
+    height:40px;
+    line-height: 40px;
+    width:280px;
+    text-align: center;
+    background:#007ed7;
+    color:#fff;
+    outline: none;
+    border:none;
+    font-size:18px;
+    border-radius:5px;
+    margin-left:80px;
+    cursor: pointer;
+}
+.regBtn button.unClick{
+    background:#ccc;
+}
+.regBtn a{
+    margin-left:50px;
+    font-size:14px;
+    color:blue;
+}
+.regBtn a:hover{
+    text-decoration: underline;
+}
+.footer {
+    background: #0a70b1;
+}
+
+.footer .product {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer .product dl {
+    margin: 10px 0;
+    padding: 0 40px;
+    border-left: 1px solid #3288bf;
+}
+
+.footer .product dl dt {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer .product .dl1 {
+    width: 200px;
+}
+
+.footer .product .dl2 {
+    width: 300px;
+}
+
+.footer .product .dl2 dd {
+    width: 100px;
+    margin-right: 9px;
+}
+
+.footer .product .dl3 {
+    width: 500px;
+}
+
+.footer .product .dl3 dd {
+    padding: 0 10px 0 0;
+    margin-right: 10px;
+}
+
+.footer .product dl dd {
+    float: left;
+    font-size: 12px;
+}
+
+.footer .product dl dd a {
+    color: #89c3eb;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+
+.footer .product dl dd a:hover {
+    color: #f0f0f0;
+}
+
+.footer .product dl dd a:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    background-image: url(../images/icon2.png);
+    background-position: 0 -173px;
+    display: inline-block;
+}
+
+.links {
+    background: #f0f0f0;
+}
+
+.links div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.links div ul {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.links div ul li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.links div ul li:after {
+    content: "/";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    color: #999;
+}
+
+.links div ul li a {
+    color: #666;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.links div ul li a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.scrollBar {
+    width: 70px;
+    height: 70px;
+    background: url(../images/index.png) -80px -747px no-repeat;
+    position: absolute;
+}
+
+.subInfo{
+    width:400px;
+    height:100px;
+    background:#fefefe;
+    position: absolute;
+    top:calc(100vh / 2 - 50px);
+    left:calc(100vw / 2 - 200px);
+    line-height:100px;
+    border-radius:10px;
+    text-align:center;
+    border:1px solid #ccc;
+}
+.subInfo .close{
+    width:20px;
+    line-height: 20px;
+    height:20px;
+    color:#ccc;
+    position: absolute;
+    top:0;
+    right:0;
+    cursor: pointer;
+}

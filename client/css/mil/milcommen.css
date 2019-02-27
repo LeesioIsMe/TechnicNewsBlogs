@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.clearfix::after {
+    clear: both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    content: "";
+}
+
+.clear {
+    zoom: 1;
+}
+
+.header {
+    height: 40px;
+    line-height: 40px;
+    background: #cb0000;
+}
+
+.header .login img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.header .me {
+    font-size: 14px;
+    height: 50px;
+}
+
+.header .account a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header .logout a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#smlogo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -5px;
+    left: -10px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+#logo {
+    display: none;
+}
+
+.nav {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav ul:nth-child(1) {
+    float: left;
+}
+
+.nav ul:nth-child(2) {
+    float: right;
+}
+
+.nav ul>li {
+    float: left;
+    padding: 0 5px;
+    margin-right: 1px;
+}
+
+.nav .func {
+    padding: 0;
+}
+
+.nav .func:hover {
+    background: unset;
+}
+
+.nav ul>li>a {
+    font-size: 12px;
+    color: #fff;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.nav .mainPage {
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mainPage i {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background: url(../../images/mil/images/milmovie/fe8104f6f07b5b237f35254c46564f3d.png);
+    margin-right: 5px;
+}
+
+.set, .get, .pho, .time, .wechat {
+    width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.set {
+    width: 151px;
+}
+
+.set i, .get i, .pho i, .time i, .wechat i {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: 4px;
+    margin-right: 10px;
+    width: 25px;
+    height: 18px;
+    background: url(../../images/mil/images/milmovie/6d4a1dbefa7422d4d0be9c7a39d29857.png) 0px -10px no-repeat;
+}
+
+.get i {
+    background-position: 0 -50px;
+}
+
+.pho i {
+    background-position: 0 -92px;
+}
+
+.time i {
+    background-position: 0 -130px;
+}
+
+.wechat i {
+    background-position: 0 -172px;
+}
+
+.phoClient, .wcCode {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    display: none;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 9999;
+    background: #fff;
+}
+
+.phoClient:before, .wcCode:before {
+    content: "";
+    border: 5px solid transparent;
+    border-top-color: #cb0000;
+    position: absolute;
+    top: 0;
+    left: 71px;
+}
+
+.phoClient img, .wcCode img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+}
+
+.tl, .tr, .bl, .br {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #333;
+}
+
+.tl {
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    top: 0;
+    left: 0;
+}
+
+.tr {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    top: 0;
+    right: 0;
+}
+
+.bl {
+    border-right-color: transparent;
+    border-top-color: transparent;
+    top: 140px;
+    left: 0;
+}
+
+.br {
+    border-left-color: transparent;
+    border-top-color: transparent;
+    top: 140px;
+    right: 0;
+}
+
+.nav ul>li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav ul>li.hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.moreContent {
+    position: absolute;
+    top: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    z-index: 9999;
+    box-shadow: #333 0 5px 10px;
+}
+
+.moreContent ul {
+    width: 320px;
+}
+
+.moreContent ul li {
+    float: left;
+    text-align: center;
+}
+
+.moreContent ul li a {
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.moreContent ul li a:hover {
+    background: #eee;
+    border-radius: 5px;
+}
+
+.header .nav .login, .header .nav .register {
+    padding: 0 20px;
+    height: 40px;
+    text-align: center;
+}
+
+.header .nav .login {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.guider {
+    width: 1000px;
+    margin: 30px auto;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.guider .logo {
+    width: 200px;
+    padding: 10px 0;
+    float: left;
+}
+
+.guider .logo img {
+    width: 100%;
+}
+
+.guider .path-art {
+    float: left;
+    margin: 40px 0 0 20px;
+}
+
+.guider .path-page {
+    float: right;
+    margin-top: 42px;
+}
+
+.guider a {
+    color: #999;
+    padding: 0 5px;
+}
+
+.guider em {
+    color: #999;
+}
+
+.guider i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../images/milmovie/icon.png) -181px -23px no-repeat;
+}
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.mainContent {
+    width: 700px;
+    float: left;
+}
+
+.mainContent h2 {
+    font-size: 30px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.releaseTime {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    color: #999;
+}
+
+.releaseTime .dateTime {
+    display: inline-block;
+    font-size: 0;
+    height: 40px;
+    line-height: 40px;
+}
+
+.releaseTime .dateTime b, .belongTo b {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.releaseTime .dateTime i, .belongTo i {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: center;
+    background: url(../../images/mil/images/milmovie/ebcf655761823f3683c52da6b4972ee6.png) -10px -10px no-repeat;
+}
+
+.belongTo i {
+    background-position: -10px -50px;
+    margin-left: 20px;
+}
+
+.join {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.join i {
+    margin: 0;
+    font-style: normal;
+    font-size: 14px;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 2px 0 0 2px;
+}
+
+.join a {
+    font-size: 14px;
+    padding: 5px 10px;
+    background: #cb0000;
+    color: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.join a:after {
+    content: "";
+    border-top: 5px solid #cb0000;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    position: absolute;
+    top: 29px;
+    left: 19px
+}
+
+.details {
+    text-indent: 2em;
+    line-height: 2em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.post{
+    text-align: center;
+}
+.post img{
+    width:500px;
+}
+.sideAdver {
+    width: 300px;
+    float: right;
+}
+
+.attitude {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.attitude>span {
+    font-weight: bold;
+    color: #333;
+}
+
+.attitude .progress {
+    height: 170px;
+    padding: 0 50px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+}
+
+.attitude .progress div {
+    position: relative;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.attitude .progress div i {
+    font-style: normal;
+    display: inline-block;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.attitude .progress div p {
+    height: 5px;
+    width: 25px;
+    margin: 5px auto;
+    border-radius: 3px;
+    background: #f8d863;
+}
+
+.attitude .progress div a, .attitude .progress div span {
+    display: block;
+    text-align: center;
+}

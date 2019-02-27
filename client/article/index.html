@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章</title>
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/purl.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- 百度富文本插件 -->
+    <link rel="stylesheet" href="../js/ueditor/themes/default/_css/umeditor.css">
+    <script src="../js/ueditor/umeditor.config.js"></script>
+    <script src="../js/ueditor/editor_api.js"></script>
+    <script src="../js/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg" id="top">
+            <div class="header">
+                <div class="logo">
+                    <a href="../index.html">首页</a>
+                </div>
+                <div class="user"></div>
+            </div>
+        </div>
+        <div class="main">
+
+            <div class="left">
+                <div class="content" id="content">
+                    <script id="content_tmp" type="text/html">
+                        <div class="title clearfix">
+                            <h2>{{data.title}}</h2>
+                            <span class="author"><img src="../images/logo_small_default.jpg" alt="" style="width:20px;height:20px;border-radius:50%;"> {{data.nickname}}</span>
+                            <span class="time"><img src="../images/clock.jpg" alt="" style="width:20px;height:20px;border-radius:50%;"> {{data.createTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}</span>
+                        </div>
+                        <div class="text">
+                            {{@data.content}}
+                        </div>
+                        <div class="attitude clearfix">
+                            <div class="articleInfo">
+                                <span class="sort">分类：<label>{{data.typeName}}</label></span>
+                                <div class="options">
+                                    <a href="javascript:;" class="good" data-postid="{{data.postId}}"  data-type="recommend">我要顶</a>
+                                    <a href="javascript:;" class="bad" data-postid="{{data.postId}}"  data-type="against">我要踩</a>
+                                </div>
+                                <div class="user clearfix">
+                                    <img src="../{{data.logo}}?{{data.logo}}:../images/default_logo.jpg" alt="">
+                                    <div>
+                                        <span><a href="#">{{data.nickname}}加油</a></span>
+                                        <span><a href="#">关注 - </a></span>
+                                        <span><a href="#">粉丝 - </a></span>
+                                    </div>
+                                </div>
+                                <div class="pager">
+                                    <a href="index.html?{{data.postId - 1}}" class="prev">上一篇 {{dataPrev.title}}</a>
+                                    {{if dataNext}}
+                                    <a href="index.html?{{data.postId + 1}}" class="next">下一篇 {{dataNext.title}}</a>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div class="rec_against">
+                                <div class="recommend" data-postid="{{data.postId}}"  data-type="recommend"><span><a href="javascript:;">{{data.recommend}}</a></span></div>
+                                <div class="against" data-postid="{{data.postId}}"  data-type="against"><span><a href="javascript:;">{{data.against}}</a></span></div>
+                                <div class="pleaseLogin">
+                                    请先 <a href="../user/login.html">登录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+
+                <div class="comment clearfix" id="comment">
+                    <div class="comment_title">
+                        <h2>评论列表</h2>
+                    </div>
+                    <div class="comment_list" id="comment_list"></div>
+                    <script id="comment_list_tmp" type="text/html">
+                        {{each data d i}}
+                        <div class="items clearfix" id="floor{{i + 1}}">
+                            <div class="comment_info clearfix">
+                                <span class="comment_time"><a href="#floor{{i + 1}}">#{{i + 1}}楼</a>&emsp;  {{d.createTime | dateFormat2 "YYYY-MM-DD hh:mm"}}&emsp; <a href="#">{{d.nickname}}</a> <a href="" class="msg"></a></span>
+                                <span class="comment_options"><a id="response" href="#myEditor" data-nickname="{{d.nickname}}">回复</a></span>
+                            </div>
+                            <div class="comment_content">
+                                {{@d.comment}}
+                            </div>
+                            <div class="comment_attitude">
+                                <a href="javascript:;" onclick="addAttitude({{d.uid}},{{d.id}},'good')" >支持({{d.good}})</a>
+                                <a href="javascript:;" onclick="addAttitude({{d.uid}},{{d.id}},'bad')" >反对({{d.bad}})</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                       
+                    </script>
+                    <div class="refresh clearfix">
+                        <span>
+                            <a href="javascript:;" onclick="getComments()">刷新评论</a>
+                            <a href="javascript:;" onclick="pageReload()">刷新页面</a>
+                            <a href="#top">返回顶部</a>
+                        </span>
+                    </div>
+                    <div class="postComment">
+                        <div class="nickName">
+                            <label for="nickName">昵称：<i class="icon"></i></label>
+
+                            <input type="text" id="nickName" value="" disabled>
+                        </div>
+                        <div class="postText">
+                            <span class="textTitle">评论内容：</span>
+                            <script id="myEditor" type="text/plain" style="width:400px;height:240px;">快来发表你的看法吧</script>
+                        </div>
+                        <div class="postOptions">
+                            <a href="javascript:;" class="submit" id="btnSubmit">提交评论</a>
+                            <a href="javascript:;" class="logout" id="btnLogout">退出登录</a>
+                        </div>
+                    </div>
+                    <div class="tips">
+                        <span>
+                            <i class="icon_addComment"></i>
+                            注册用户登录后才能发表评论，请 <a href="../user/login.html">登录</a> 或 <a href="../user/reg.html">注册</a>
+                            ，<a href="../index.html">访问</a> 网站首页。
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function addAttitude(userId, commentId, attitude) {
+            console.log(attitude + "--" + commentId + "--" + userId);
+            $.post(`${host}/comments/updateComment`, {
+                attitude,
+                commentId,
+                userId
+            }).done(data => {
+                console.log(data);
+                if (data.code == 200) {
+                    layer.alert(data.message);
+                    getComments();
+                }
+            }).fail(err => {
+                throw err;
+            })
+        }
+        function getContent() {
+            var articleId = $.url().data.attr.query - 0;
+            $.get(`${host}/articles/getContent`, {
+                id: articleId
+            }).done(data => {
+                if (data.article.length == 3) {
+                    $("#content").html(template("content_tmp", { dataPrev: data.article[0], data: data.article[1], dataNext: data.article[2] }));
+                } else {
+                    if (articleId == data.maxCount) {
+                        $("#content").html(template("content_tmp", { dataPrev: data.article[0], data: data.article[1] }));
+                        $(".next").css({ display: "none" });
+                    } else if (articleId == 1) {
+                        $("#content").html(template("content_tmp", { data: data.article[0], dataNext: data.article[1] }));
+                        $("prev").css({ display: "none" });
+                    }
+                }
+            }).fail(err => {
+                throw err;
+            })
+        }
+        function pageReload() {
+            location.reload();
+        }
+        function getComments() {
+            var articleId = $.url().data.attr.query - 0;
+            $.get(`${host}/comments/getComments`, {
+                articleId
+            }).done(data => {
+                console.log(data)
+                if (data.code != 200) {
+                    $("#comment_list").html("暂时没有评论");
+                    return;
+                }
+                var html = template("comment_list_tmp", { data: data.comments })
+                $("#comment_list").html(html);
+            }).fail(err => {
+                throw err;
+            })
+        }
+        $(function () {
+            // console.log($.url());
+            getContent();
+            getComments();
+
+            var account = $.cookie("account");
+            var userId = 0;
+            if (account) {
+                $(".pleaseLogin").css({ display: "block" });
+                $(".tips").css({ display: "none" });
+                $.get(`${host}/users/getUserInfo`, { account }).done(data => {
+                    if (data.code == 200) {
+                        $(".user").html(`
+                            <div class="me">
+                                <span class="account"><a href="personal.html" id="account">${data.userInfo.nickname}</a></span>
+                                <img id="smlogo" src=${data.userInfo.logo} alt="">
+                                <span class="logout"><a href="javascript:;" id="logout" onclick="logout()">退出</a></span>
+                            </div>
+                        `)
+                        // 方便更新评论表时候找到对应的用户id
+                        userId = data.userInfo.id
+
+                        $("#nickName").val(data.userInfo.nickname);
+                        return
+                    }
+                }).fail(err => {
+                    throw err;
+                })
+            } else {
+                $("#content").on("click", ".against,.recommend", function () {
+                    $(".pleaseLogin").css({ display: "block" });
+                })
+                $(".tips").css({ display: "block" });
+                $(".postComment").css({ display: "none" });
+            }
+
+            var comment = $.url().data.attr.fragment;
+            // console.log(comment)
+            if (comment) {
+                $("#comment").animate({
+                    scrollTop: 0
+                }, 1000);
+            }
+            $("#content").on("click", ".recommend,.good", function () {
+                var recommend = true;
+                var postId = $(this).data("postid");
+                console.log($(this))
+                console.log(postId);
+                $.post(`${host}/articles/updateArticle`, {
+                    recommend,
+                    postId
+                }).done(data => {
+                    // console.log(data);
+                    if (data.code == 200) {
+                        getContent();
+                    }
+                }).fail(err => {
+                    throw err;
+                })
+            })
+            $("#content").on("click", ".against,.bad", function () {
+                var against = true;
+                var postId = $(this).data("postid");
+                console.log($(this))
+                console.log(postId);
+                $.post(`${host}/articles/updateArticle`, {
+                    against,
+                    postId
+                }).done(data => {
+                    // console.log(data);
+                    if (data.code == 200) {
+                        getContent();
+                    }
+                }).fail(err => {
+                    throw err;
+                })
+            })
+
+            var um = UM.getEditor('myEditor', {
+                //这里可以选择自己需要的工具按钮名称,此处仅选择如下七个
+                toolbar: ['fullscreen', 'face', 'undo', 'redo', 'bold', 'italic', 'underline', 'insertimage'],
+                //focus时自动清空初始化时的内容
+                autoClearinitialContent: true,
+                //关闭字数统计
+                wordCount: false,
+                //关闭elementPath
+                elementPathEnabled: false,
+                //默认的编辑区域高度
+                initialFrameHeight: 300
+                //更多其他参数，请参考umeditor.config.js中的配置项
+            });
+
+            $("#comment").on("click", "#response", function () {
+                console.log($(this).data("nickname"))
+                um.setContent("<span class='response_target'>@" + $(this).data("nickname") + "</span>:")
+            })
+            $("#btnSubmit").click(function () {
+                console.log(userId)
+                var content = um.getContent();
+                var articleId = $.url().data.attr.query - 0;
+                $.post(`${host}/comments/insertComment`, {
+                    content,
+                    userId,
+                    articleId
+                }).done(data => {
+                    if (data.code == 200) {
+                        layer.msg(data.message, {
+                            icon: 1,
+                            title: "提示"
+                        })
+                        getComments();
+                    }
+                }).fail(err => {
+                    throw err;
+                })
+            })
+            $("#btnLogout").click(function () {
+                layer.open({
+                    icon: 3,
+                    content: "确定要提出么？",
+                    yes: function () {
+                        logout();
+                    }
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

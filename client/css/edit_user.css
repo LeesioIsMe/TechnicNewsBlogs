@@ -1,0 +1,128 @@
+.container, body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.info {
+    width: 500px;
+    border: 1px solid #ccc;
+    box-shadow: #ccc 4px 5px 5px;
+    border-radius: 5px;
+    padding: 30px;
+    margin-right: 10px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.info .group label {
+    width: 50px;
+    text-align: justify;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.info .group label span {
+    width: 100%;
+    display: inline-block;
+}
+
+.info .group input {
+    position: relative;
+    top: -20px;
+    left: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.info .btn {
+    text-align: center;
+}
+
+.info .btn a {
+    background: rgb(57, 197, 250);
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sideImg {
+    width: 300px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.sideImg img {
+    width: 100%;
+}
+
+.header-bg {
+    height: 50px;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 楷体;
+    font-size: 24px;
+}
+
+.header .me {
+    background: rgba(0, 0, 0, 0.3);
+    height: 50px;
+}
+
+.header .account a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#smlogo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    border-radius: 50%;
+    background:#fff;
+}
+
+#logo {
+    display: none;
+}
+
+.title {
+    font-size: 22px;
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 100;
+}

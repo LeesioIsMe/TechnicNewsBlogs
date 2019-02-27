@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height:100vh;
+    background: url(../images/login_bg2.jpg) no-repeat;
+}
+
+
+.header-bg {
+    background: rgba(0, 150, 200, 0.5);
+    box-shadow: rgba(0, 150, 200, 0.5) 5px 5px 20px;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    color: #eee;
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 36px;
+    font-family: 楷体;
+}
+.header .options{
+    font-size:12px;
+}
+.header .options a{
+    color:rgb(0,255,255);
+    text-decoration: none;
+}
+.header .options i:after{
+    margin:0 10px;
+    content:"|";
+    font-size:16px;
+    font-style: normal;
+    color:rgb(255,255,255,0.3);
+    width:1px;
+}
+.header .options a:hover{
+    color:darkred;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.info {
+    width: 500px;
+    border: 1px solid #ccc;
+    box-shadow: #ccc 4px 5px 5px;
+    border-radius: 5px;
+    padding: 30px;
+    margin-right: 10px;
+    text-align: center;
+    margin-top: 70px;
+    background:rgba(255,255,255,0.7);
+}
+
+.info .group label {
+    width: 60px;
+    text-align: justify;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.info .group label span {
+    width: 100%;
+    display: inline-block;
+}
+
+.info .group.remember {
+    height:45px;
+    text-align: initial;
+    padding:0 0 0 130px;
+    font-size:14px;
+}    
+
+.info .group input:not([name="remember"]) {
+    position: relative;
+    top: -20px;
+    left: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.info .btn {
+    text-align: center;
+    margin-top:10px;
+}
+
+.info .btn a {
+    background: rgb(57, 197, 250);
+    padding: 10px 20px;
+    border-radius:3px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.info #getBack{
+    background:unset;
+    color:rgb(14, 161, 230);
+    font-size:14px;
+    margin-left:20px;
+}
+.info #getBack:hover{
+    color:darkred;
+}
+.sideImg {
+    width: 200px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.sideImg img {
+    width: 100%;
+}

@@ -1,0 +1,133 @@
+body, .container {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgb(200, 200, 200), rgb(255, 255, 255));
+}
+
+.header-bg {
+    background: rgb(48, 43, 43)
+}
+
+.header {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.header label {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.header input {
+    width: 330px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 0 0 0 5px;
+}
+
+.header select {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    outline: none;
+    font-size: 12px;
+    margin-right: 14px;
+}
+
+.box {
+    width: 980px;
+    margin: 0px auto;
+    padding: 20px;
+    position: relative;
+    background: #fff;
+    height: calc(100vh - 100px - 100px);
+}
+
+.btn {
+    padding: 0 0 0 130px;
+    margin: 20px 0 0 0;
+}
+
+#postForm>p {
+    width: 30px;
+    font-size: 22px;
+    position: absolute;
+    left: 60px;
+    top: 120px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#editor {
+    width: 720px;
+    margin: 20px auto;
+}
+
+#btnPost {
+    border: 1px solid rgb(100, 200, 220);
+    padding: 5px 20px;
+    background: rgba(100, 200, 220, 0.7);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.backTo a {
+    background: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.backTo a:hover {
+    color: orangered;
+}
+
+.backTo {
+    float: right;
+    margin: 20px 0 0 0;
+}
+
+.options {
+    float: left;
+}
+
+.summary {
+    width: 720px;
+    margin: 0 auto;
+    position: relative;
+    font-size:14px;
+}
+
+.summary label {
+    width: 50px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    position: absolute;
+}
+
+.summary textarea {
+    width: 660px;
+    height: 50px;
+    padding: 5px 0 0 60px;
+    box-shadow: #ccc 1px 1px 5px;
+    outline: none;
+}

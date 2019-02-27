@@ -1,0 +1,145 @@
+.container, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    background: url(../images/getback_pwd.jpg) no-repeat;
+}
+
+.header-bg {
+    background: rgba(0, 150, 200, 0.5);
+    box-shadow: rgba(0, 150, 200, 0.5) 5px 5px 20px;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    color: #eee;
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 36px;
+    font-family: 楷体;
+}
+
+.header .options {
+    font-size: 12px;
+}
+
+.header .options a {
+    color: rgb(0, 255, 255);
+    text-decoration: none;
+}
+
+.header .options i:after {
+    margin: 0 10px;
+    content: "|";
+    font-size: 16px;
+    font-style: normal;
+    color: rgb(255, 255, 255, 0.3);
+    width: 1px;
+}
+
+.header .options a:hover {
+    color: darkred;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    color: #333;
+    margin: 150px 0 0 0;
+}
+
+.info {
+    background: rgba(255, 255, 255, 0.7);
+    width: 500px;
+    border: 1px solid #ccc;
+    box-shadow: #ccc 4px 5px 5px;
+    border-radius: 5px;
+    padding: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.info .group label {
+    width: 60px;
+    text-align: justify;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.info .group label span {
+    width: 100%;
+    display: inline-block;
+}
+
+.info .group input {
+    position: relative;
+    top: -20px;
+    left: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.info .captcha .tips {
+    position: absolute;
+    bottom: -5px;
+    left: 135px;
+    width: 300px;
+    color:rgb(231, 129, 129);
+}
+
+.captcha {
+    position: relative;
+}
+
+#captcha, #sendMail {
+    width: 140px;
+}
+
+#captcha {
+    margin-right: 20px;
+}
+
+#sendMail {
+    background: #fff;
+    color: #555;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: #ccc 1px 1px 1px;
+    transition: 0.2s;
+}
+
+#sendMail:hover {
+    transform: scale(1.05)
+}
+
+.info .btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.info .btn a {
+    background: rgb(57, 197, 250);
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+#imgCode {
+    position: relative;
+    display: inline-block;
+}

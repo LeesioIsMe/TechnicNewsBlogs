@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/personal.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <!-- <script src="../js/moment-with-locales.min.js"></script> -->
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg">
+            <div class="header">
+                <div class="logo">
+                    <a href="personal.html">个人中心</a>
+                </div>
+                <div class="me">
+                    <span class="account"><a href="personal.html" id="account">13462229618</a></span>
+                    <img id="smlogo" src="" alt="">
+                    <span class="logout"><a href="javascript:;" onclick="logout()">退出</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <ul class="list">
+                <li><a href="edit_user.html">修改用户资料</a></li>
+                <li>
+                    <a href="javascript:;">发布文章</a>
+                    <ul class="post">
+                        <li><a href="post_article.html?1">发布文章</a></li>
+                        <li><a href="post_article.html?2">发布新闻</a></li>
+                        <li><a href="post_article.html?3">写随笔</a></li>
+                        <li><a href="post_article.html?4">写日记</a></li>
+                    </ul>
+                </li>
+                <li><a href="changePassword.html">修改密码</a></li>
+                <li><a href="/">返回主页</a></li>
+            </ul>
+
+            <div id="userInfo"></div>
+
+            <script id="userInfo_tmp" type="text/html">
+                <img src="{{data.logo?data.logo:'../images/logo_small.gif'}}" id="logoBig">
+                <h2>{{data.account}}</h2>
+                <p><span>昵称：</span>{{data.nickname?data.nickname:'未设置'}}</p>
+                <p><span>感兴趣的技术：</span>{{data.technical?data.technical:'未设置'}}</p>
+                <p><span>园龄：</span>{{data.createTime | dateFormat "YYYY-MM-DD"}}</p>
+                <p><span>博客：</span>{{data.blogWeb?data.blogWeb:'未设置'}}</p>
+            </script>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            checkLogin();
+            var logo = JSON.parse($.cookie("userInfo")).logo;
+            var account = $.cookie("account")
+            $("#smlogo").attr("src", logo);
+            $("#account").text(account);
+            $.get(`${host}/users/getUserInfo`, function (data) {
+                if (data.code == 200) {
+                    var userInfo = data.userInfo;
+                    var html = template('userInfo_tmp', { data: userInfo });
+                    $('#userInfo').html(html);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
