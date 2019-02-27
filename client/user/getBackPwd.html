@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>找回密码</title>
+    <link rel="stylesheet" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/getBackPwd.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/layer/layer.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg">
+            <div class="header">
+                <div class="title">
+                    找回密码
+                </div>
+                <div class="options">
+                    前往<a href="login.html"> 登录 </a>
+                    <i class="sep"></i> <a href="../index.html">首页</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="info">
+                <form id="getBackForm">
+                    <div class="group">
+                        <label for="account">账号<span></span></label>
+                        <input type="text" name="account" id="account">
+                    </div>
+
+                    <div class="group">
+                        <label for="pwd1">新密码<span></span></label>
+                        <input type="password" name="password" id="pwd1">
+                    </div>
+                    <div class="group">
+                        <label for="pwd2">重复密码<span></span></label>
+                        <input type="password" name="confirmPassword" id="pwd2">
+                    </div>
+                    <div class="group captcha">
+                        <label for="captcha">验证码：<span></span></label>
+                        <input type="text" name="captcha" id="captcha"><input type="button" id="sendMail" value="发送验证码">
+                        <label class="tips">tips: 验证码会发送至该账号邮箱,请注意查收</label>
+                    </div>
+                    <div class="btn">
+                        <a href="javascript:;" id="btnGetBackTemp">提交</a>
+                    </div>
+                    <button id="btnGetBack" style="display:none;"></button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            getImgCode();
+            $("#sendMail").click(function () {
+                $.post(`${host}/users/sendMail`, $("#account")).done(data => {
+                    layer.alert(data.message, {
+                        icon: 1,
+                        title: "提示"
+                    })
+                }).fail(err => {
+                    throw err;
+                })
+            })
+            $("#btnGetBackTemp").click(function () {
+                $("#btnGetBack").trigger("click");
+            })
+            $("#getBackForm").submit(function (ev) {
+                ev.preventDefault();
+                if ($("#pwd1").val() != $("#pwd2").val()) {
+                    layer.alert("两次密码不一致", {
+                        icon: 2,
+                        title: "提示"
+                    })
+                    return;
+                }
+                $.post(`${host}/users/getBackPwd`, $("#getBackForm").serialize()).done(data => {
+                    console.log(data)
+                    if (data.code != 200) {
+                        layer.alert(data.message, {
+                            icon: 2,
+                            title: "提示"
+                        })
+                        return;
+                    }
+                    layer.alert("密码找回成功，3秒后跳转至登录", {
+                        icon: 1,
+                        title: "提示"
+                    })
+                    setTimeout(function () {
+                        location.href = "login.html";
+                    }, 3000)
+                }).fail(err => {
+                    throw err;
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

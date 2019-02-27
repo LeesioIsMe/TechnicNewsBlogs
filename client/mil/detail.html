@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        标题
+    </title>
+    <link rel="stylesheet" href="../css/mil/milmovie.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/purl.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <div class="nav clearfix">
+                <ul class="clearfix">
+                    <li class="mainPage"><a href="../mil/index.html"><i></i>首页</a></li>
+                    <li><a href="../index.html">技术</a></li>
+                    <li><a href="../mil/index.html">军事</a></li>
+                    <li class="func">
+                        <ul>
+                            <li class="set"><a href="#"><i></i>导航功能模块1</a></li>
+                            <li class="get"><a href="#"><i></i>导航功能模块2</a></li>
+                            <li class="pho"><a href="#"><i></i>导航功能模块3</a></li>
+                            <li class="time"><a href="#"><i></i>QQ二维码</a></li>
+                            <li class="wechat"><a href="#"><i></i>WeChat二维码</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <ul class="login-reg clearfix">
+                    <li class="login"><a href="../user/login.html">登录</a></li>
+                    <li class="register"><a href="../user/reg.html">注册</a></li>
+                </ul>
+
+            </div>
+            <div class="phoClient">
+                <img src="../images/mil/images/milmovie/813b661f66ca3a1188afd0d06cab0eca.jpg" alt="">
+                <span>扫描二维码下载</span>
+                <div class="tl"></div>
+                <div class="tr"></div>
+                <div class="bl"></div>
+                <div class="br"></div>
+            </div>
+            <div class="wcCode">
+                <img src="../images/mil/images/milmovie/HQgwx.png" alt="">
+                <span>扫描二维码关注</span>
+                <div class="tl"></div>
+                <div class="tr"></div>
+                <div class="bl"></div>
+                <div class="br"></div>
+            </div>
+            <div class="moreContent">
+                <ul class="clearfix">
+                    <li><a href="#">台海</a></li>
+                    <li><a href="#">视频</a></li>
+                    <li><a href="#">社会</a></li>
+                    <li><a href="#">图片</a></li>
+                    <li><a href="#">评论</a></li>
+                    <li><a href="#">历史</a></li>
+                    <li><a href="#">时尚</a></li>
+                    <li><a href="#">数码</a></li>
+                    <li><a href="#">留学</a></li>
+                    <li><a href="#">智能</a></li>
+                    <li><a href="#">世博</a></li>
+                    <li><a href="#">体育</a></li>
+                    <li><a href="#">旅游</a></li>
+                    <li><a href="#">健康</a></li>
+                    <li><a href="#">公益</a></li>
+                    <li><a href="#">女人</a></li>
+                    <li><a href="#">跑步</a></li>
+                    <li><a href="#">滑雪</a></li>
+                    <li><a href="#">无人机</a></li>
+                    <li><a href="#">一带一路</a></li>
+                    <li><a href="#">海外看中国</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="guider clearfix">
+            <div class="logo"><img src="../images/mil/images/milmovie/logo_channel_12.png" alt=""></div>
+            <div class="path-art">
+                <a href="#">环球网 </a><i></i>
+                <a href="#">军事 </a><i></i>
+                <a href="#">军事速递</a><i></i>
+                <a href="#">正文 </a>
+            </div>
+            <div class="path-page">
+                <a href="#">国际</a><em>/</em>
+                <a href="#">国内</a><em>/</em>
+                <a href="#">军事</a><em>/</em>
+                <a href="#">社会</a><em>/</em>
+                <a href="#">太嗨</a><em>/</em>
+                <a href="#">评论</a><em>/</em>
+                <a href="#">海外看中国</a><em>/</em>
+                <a href="#">博览</a><em>/</em>
+                <a href="#">新闻中心</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="mainContent">
+                <div id="content_body"></div>
+                <script id="content_body_tmp" type="text/html">
+                    <h2>
+                        {{data.title}}
+                    </h2>
+                    <div class="releaseTime">
+                        <span class="dateTime"><i></i><b>
+                            {{data.createTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}</b></span>
+                        <span class="belongTo"><i></i><b>军事</b></span>
+                        <span class="join"><i>{{data.comment}}</i><a href="#">参与</a></span>
+                    </div>
+                    <div class="video">
+                        <video src="../{{data.video}}" width="100%" poster="../images/mil/{{data.poster}}" preload="auto"
+                            controls="controls" quality="high"></video>
+                    </div>
+                    <div class="details">
+                        <p>
+                            {{data.detail}}
+                        </p>
+                    </div>
+                </script>
+                <script>
+                    var movieId = $.url().data.attr.query;
+                    $.get(`${host}/milNews/getMovie`, { movieId }).done(data => {
+                        console.log(data);
+                        if (data.code != 200) {
+                            $("#content_body").html(data.message);
+                            return;
+                        }
+                        $("#content_body").html(template("content_body_tmp", { data: data.movie }));
+                    }).fail(err => {
+                        throw err;
+                    })
+                </script>
+                <div class="attitude">
+                    <span class="att">您看完这则新闻后的表情是？</span>
+                    <div class="progress" id="attitudes"></div>
+                    <script id="attitudes_tmp" type="text/html">
+                        <div class="sad" name="sad">
+                            <i>{{data.sad}}</i>
+                            <p data-count="{{data.sad}}"></p>
+                            <a href="javascript:;" data-name="sad" data-id="{{data.id}}" data-count="{{data.sad}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b1.gif" alt="">
+                                <span>悲伤</span>
+                            </a>
+                        </div>
+                        <div class="diss" name="diss">
+                            <i>{{data.diss}}</i>
+                            <p data-count="{{data.diss}}"></p>
+                            <a href="javascript:;" data-name="diss" data-id="{{data.id}}" data-count="{{data.diss}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b2.gif" alt="">
+                                <span>鄙视</span>
+                            </a>
+                        </div>
+                        <div class="best" name="best">
+                            <i>{{data.best}}</i>
+                            <p data-count="{{data.best}}"></p>
+                            <a href="javascript:;" data-name="best" data-id="{{data.id}}" data-count="{{data.best}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b3.gif" alt="">
+                                <span>大赞</span>
+                            </a>
+                        </div>
+                        <div class="angry" name="angry">
+                            <i>{{data.angry}}</i>
+                            <p data-count="{{data.angry}}"></p>
+                            <a href="javascript:;" data-name="angry" data-id="{{data.id}}" data-count="{{data.angry}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b4.gif" alt="">
+                                <span>愤怒</span>
+                            </a>
+                        </div>
+                        <div class="badSmile" name="badSmile">
+                            <i>{{data.badSmile}}</i>
+                            <p data-count="{{data.badSmile}}"></p>
+                            <a href="javascript:;" data-name="badSmile" data-id="{{data.id}}" data-count="{{data.badSmile}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b5.gif" alt="">
+                                <span>坏笑</span>
+                            </a>
+                        </div>
+                        <div class="hit" name="hit">
+                            <i>{{data.hit}}</i>
+                            <p data-count="{{data.hit}}"></p>
+                            <a href="javascript:;" data-name="hit" data-id="{{data.id}}" data-count="{{data.hit}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b6.gif" alt="">
+                                <span>敲打</span>
+                            </a>
+                        </div>
+                        <div class="boring" name="boring">
+                            <i>{{data.boring}}</i>
+                            <p data-count="{{data.boring}}"></p>
+                            <a href="javascript:;" data-name="boring" data-id="{{data.id}}" data-count="{{data.boring}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b7.gif" alt="">
+                                <span>无聊</span>
+                            </a>
+                        </div>
+                        <div class="shock" name="shock">
+                            <i>{{data.shock}}</i>
+                            <p data-count="{{data.shock}}"></p>
+                            <a href="javascript:;" data-name="shock" data-id="{{data.id}}" data-count="{{data.shock}}" class="atti">
+                                <img src="../images/mil/images/milmovie/face/b8.gif" alt="">
+                                <span>震惊</span>
+                            </a>
+                        </div>
+                    </script>
+                    <script>
+                        function getAttitudes() {
+                            $.get(`${host}/milNews/getAttitudes`, { movieId }).done(data => {
+                                console.log(data);
+                                if (data.code == 200) {
+                                    $("#attitudes").html(template("attitudes_tmp", { data: data.attitudes }))
+                                }
+                                $(".attitude p").each(function (i, p) {
+                                    var count = $(p).data("count") - 0;
+                                    // console.log(count)
+                                    $(p).css("height", count * 0.5 + "px")
+                                })
+                            }).fail(err => {
+                                throw err;
+                            })
+                        }
+                        getAttitudes();
+                        $(".attitude").on("click", ".atti", function () {
+                            var count = $(this).data("count");
+                            var attitudeId = $(this).data("id")
+                            var userId = $.cookie("userId")
+                            var name = $(this).data("name")
+                            $.post(`${host}/milNews/updateAttitude`, {
+                                count,
+                                attitudeId,
+                                userId,
+                                name
+                            }).done(data => {
+                                // console.log(data)
+                                if (data.code == 202) {
+                                    layer.alert(data.message + "，请<a href='../user/login.html' style='color:blue;text-decoration:underline'>登陆</a>后在表态");
+                                    return;
+                                }
+                                if (data.code == 201) {
+                                    layer.alert(data.message);
+                                    return;
+                                }
+                                getAttitudes();
+                            }).fail(err => {
+                                throw err;
+                            })
+                        })
+
+
+                    </script>
+                </div>
+
+                <div class="message">
+                    <div class="text" id="postComment">
+                        <form id="postForm">
+                            <img id="mylogo" src="../images/mil/images/milmovie/face/avatar.png" alt="">
+                            <textarea name="text" id="text" rows="8" cols="30" maxlength="300">
+
+                                </textarea>
+                            <div>
+                                <button type="submit" id="postBtn">发表</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="list">
+                        <div id="comment"></div>
+                        <script id="comment_tmp" type="text/html">
+                        <ul>
+                            {{each data d i}}
+                            <li class="clearfix">
+                                <div class="headImg">
+                                    <img src="../{{d.logo}}" alt="">
+                                </div>
+                                <div class="comment">
+                                    <div class="person clearfix">
+                                        <span class="name">{{i+1}}楼 <a href="#">{{d.nickname}}</a></span>
+
+                                        <span class="leaveTime">{{d.createTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}</span>
+                                    </div>
+                                    <div class="info">
+                                        {{d.comment}}
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        </script>
+                        <script>
+                            function getComments() {
+                                $.get(`${host}/milNews/getComments`, { movieId }).done(data => {
+                                    console.log(data);
+                                    if (data.code != 200) {
+                                        $("#comment").html("暂时没有评论，立即发表<a href='#postComment' style='color:blue;text-decoration:underline'>评论</a>")
+                                        return;
+                                    }
+                                    $("#comment").html(template("comment_tmp", { data: data.comments }));
+                                    $(".join i").text(data.comments.length);
+                                }).fail(err => {
+                                    throw err;
+                                })
+                            }
+                            getComments();
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="sideAdver">
+
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            var account = $.cookie("account");
+            if (account) {
+                $.get(`${host}/users/getUserInfo`, { account }).done(data => {
+                    if (data.code == 200) {
+                        $(".login-reg").html(`
+                            <div class="me">
+                                <span class="account"><a href="../user/personal.html" id="account">${data.userInfo.nickname}</a></span>
+                                <img id="smlogo" src=${data.userInfo.logo} alt="">
+                                <span class="logout"><a href="javascript:;" onclick="logout()">退出</a></span>
+                            </div>
+                        `)
+                        $("#mylogo").attr("src", data.userInfo.logo);
+                        return
+                    }
+                }).fail(err => {
+                    throw err;
+                })
+            }
+            $(".func li").mouseover(function () {
+                $(this).width("140px").addClass("hover").siblings().width("29px").removeClass("hover");
+            })
+            $(".time,.phoClient").mouseover(() => {
+                var x = $(".time").offset().left;
+                $(".phoClient").css("left", x).show();
+            }).mouseleave(() => {
+                $(".phoClient").hide();
+            })
+            $(".wechat,.wcCode").mouseover(function () {
+                var x = $(".wechat").offset().left;
+                $(".wcCode").css("left", x).show();
+            }).mouseleave(() => {
+                $(".wcCode").hide();
+            })
+
+            $("#postComment").click(function (e) {
+                e.preventDefault();
+                if ($('#text').val().trim() == "") {
+                    layer.msg("请填写内容");
+                    return;
+                }
+                if (!$.cookie("account")) {
+                    layer.alert("请<a href='../user/login.html' style='color:blue;text-decoration:underline'>登陆</a>后在发表评论")
+                    return;
+                }
+                $.post(`${host}/milNews/postComment`, {
+                    userId: $.cookie("userId"),
+                    movieId,
+                    comment: $("#text").val()
+                }).done(data => {
+                    console.log(data);
+                    if (data.code != 200) {
+                        layer.alert("评论失败")
+                        return;
+                    }
+                    getComments();
+                    $('#text').val("");
+                }).fail(err => {
+                    throw err;
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

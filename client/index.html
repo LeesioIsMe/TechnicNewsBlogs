@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻-技术博客</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.min.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/art-template.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="top">
+                <div class="title">李先豪将是中国最伟大的前端大牛！！！啧啧</div>
+                <div class="login">
+                    <span class="user_info" id="user_info">
+                        [
+                        <a href="user/login.html">登录</a>
+                        .
+                        <a href="user/reg.html">注册</a>
+                        ]
+                    </span>
+                </div>
+            </div>
+            <div class="logo">
+                <div class="logo_img">
+                    <a href="index.html">
+                        <img src="images/logo_small.jpg" alt="主页logo">
+                    </a>
+                </div>
+                <div class="ads">
+                    <a href="javascript:;" class="active"><img src="images/3dimg.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="images/3dimg2.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="images/3dimg3.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="images/3dimg4.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="images/3dimg5.jpg" alt=""></a>
+                </div>
+                <script>
+                    function playOne(index) {
+                        $(".ads a").eq(index).addClass("active").siblings().removeClass("active");
+                    }
+                    var index = 0;
+                    playOne(index);
+                    setInterval(function () {
+                        if (index == $(".ads a").length) {
+                            index = 0;
+                        }
+                        playOne(index);
+                        index++;
+                        console.log(index);
+                    },5000)
+                </script>
+            </div>
+            <div class="nav">
+                <a href="index.html">主页</a>
+                <a href="#">新闻</a>
+                <a href="mil/index.html">军事</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="left">
+                <div class="menu">
+                    <div class="title">
+                        <img src="images/arrow_right_bottom.png" alt="">
+                        网站分类
+                    </div>
+                    <div id="sortList">
+                        <ul class="firstTitle">
+                            <li>
+                                <a href="#">
+                                    <span>.NET技术</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">.NET新手区</a></li>
+                                            <li><a href="#">ASP.NET</a></li>
+                                            <li><a href="#">C#</a></li>
+                                            <li><a href="#">.NET Core</a></li>
+                                            <li><a href="#">WinForm</a></li>
+                                            <li><a href="#">Silverlight</a></li>
+                                            <li><a href="#">WCF</a></li>
+                                            <li><a href="#">.XNA</a></li>
+                                            <li><a href="#">Visual Studio</a></li>
+                                            <li><a href="#">ASP.NET MVC</a></li>
+                                            <li><a href="#">控件开发</a></li>
+                                            <li><a href="#">Entity Framework</a></li>
+                                            <li><a href="#">NHibernate</a></li>
+                                            <li><a href="#">WinRT/Metro</a></li>
+                                            <li><a href="#">WinRT/Metro</a></li>
+                                            <li><a href="#">UWP</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>编程语言</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">Java</a></li>
+                                            <li><a href="#">C++</a></li>
+                                            <li><a href="#">PHP</a></li>
+                                            <li><a href="#">Delphi</a></li>
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Ruby</a></li>
+                                            <li><a href="#">C语言</a></li>
+                                            <li><a href="#">Erlang</a></li>
+                                            <li><a href="#">Go</a></li>
+                                            <li><a href="#">Swift</a></li>
+                                            <li><a href="#">Scala</a></li>
+                                            <li><a href="#">R语言</a></li>
+                                            <li><a href="#">Verilog</a></li>
+                                            <li><a href="#">dart</a></li>
+                                            <li><a href="#">其他语言</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>软件设计</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">架构设计</a></li>
+                                            <li><a href="#">面向对象</a></li>
+                                            <li><a href="#">设计模式</a></li>
+                                            <li><a href="#">领域驱动设计</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Web前端</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">HTML/CSS</a></li>
+                                            <li><a href="#">javascript</a></li>
+                                            <li><a href="#">jQuery</a></li>
+                                            <li><a href="#">HTML5</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>企业信息化</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">BPM</a></li>
+                                            <li><a href="#">SharePoint</a></li>
+                                            <li><a href="#">GIS技术</a></li>
+                                            <li><a href="#">SAP</a></li>
+                                            <li><a href="#">Oracle ERP</a></li>
+                                            <li><a href="#">Dynamics</a></li>
+                                            <li><a href="#">信息安全</a></li>
+                                            <li><a href="#">企业信息化其他</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>手机开发</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">Android开发</a></li>
+                                            <li><a href="#">iOS开发</a></li>
+                                            <li><a href="#">Windows Phone</a></li>
+                                            <li><a href="#">Windows Mobile</a></li>
+                                            <li><a href="#">其他手机开发</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>软件工程</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">敏捷开发</a></li>
+                                            <li><a href="#">项目和团队管理</a></li>
+                                            <li><a href="#">软件工程其他</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>数据库技术</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">SQL Server</a></li>
+                                            <li><a href="#">Oracle</a></li>
+                                            <li><a href="#">Mysql</a></li>
+                                            <li><a href="#">NoSql</a></li>
+                                            <li><a href="#">大数据</a></li>
+                                            <li><a href="#">其他数据库</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>操作系统</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">Windows</a></li>
+                                            <li><a href="#">Windows Server</a></li>
+                                            <li><a href="#">Linux</a></li>
+                                            <li><a href="#">OS X</a></li>
+                                            <li><a href="#">嵌入式</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>其他分类</span>
+                                    <img src="images/arrow_right.png" alt="">
+                                    <div class="box">
+                                        <ul class="secondTitle">
+                                            <li><a href="#">非技术区</a></li>
+                                            <li><a href="#">软件测试</a></li>
+                                            <li><a href="#">代码与软件发布</a></li>
+                                            <li><a href="#">计算机图形学</a></li>
+                                            <li><a href="#">游戏开发</a></li>
+                                            <li><a href="#">程序人生</a></li>
+                                            <li><a href="#">求职面试</a></li>
+                                            <li><a href="#">读书区</a></li>
+                                            <li><a href="#">转载去</a></li>
+                                            <li><a href="#">Window CE</a></li>
+                                            <li><a href="#">翻译区</a></li>
+                                            <li><a href="#">开源研究</a></li>
+                                            <li><a href="#">Flex</a></li>
+                                            <li><a href="#">云计算</a></li>
+                                            <li><a href="#">算法与数据结构</a></li>
+                                            <li><a href="#">人工智能</a></li>
+                                            <li><a href="#">区块链</a></li>
+                                            <li><a href="#">网络安全</a></li>
+                                            <li><a href="#">其他技术区</a></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="links">
+                    <h4>链接</h4>
+                    <ul>
+                        <li><a href="#">反馈或建议</a></li>
+                        <li><a href="#">Node官网</a></li>
+                        <li><a href="#">NPM市场</a></li>
+                        <li><a href="#">jQuery官网</a></li>
+                        <li><a href="#">GitHub官网</a></li>
+                        <li><a href="#">我的Git</a></li>
+                    </ul>
+                </div>
+                <div class="recommands">
+                    <h4>7天最多推荐博客</h4>
+                    <div id="newRecommends"></div>
+                    <script id="newRecommends_tmp" type="text/html">
+                        <ul>
+                            {{each data d}}
+                            <li><a href="{{d.blogWeb}}">{{d.nickname}}</a></li>
+                            {{/each}}
+                            <li><a href="#">>> 更多推荐</a></li>
+                        </ul>
+                    </script>
+
+                </div>
+                <div class="rank">
+                    <h4>推荐新闻人排行</h4>
+                    <div id="rankRecommends"></div>
+                    <script id="rankRecommends_tmp" type="text/html">
+                        <ul>
+                            {{each data d i}}
+                            <li>{{i + 1}}.<a href="http://{{d.blogWeb}}"> {{d.nickname}}</a></li>
+                            {{/each}}
+                            <li><a href="#">>> 更多推荐</a></li>
+                        </ul>
+                    </script>
+                </div>
+                <div class="statistics">
+                    <h4>统计信息</h4>
+                    <div id="statistics"></div>
+                    <script id="statistics_tmp" type="text/html">
+                    <ul>
+                        {{each data d}}
+                        <li><span class="blog_count">{{d.typeName}} - {{d.count}}</span></li>
+                        {{/each}}
+                    </ul>
+                    </script>
+
+                </div>
+            </div>
+            <div class="mid">
+                <div class="nav">
+                    <ul class="clearfix">
+                        <li class="record1"><a href="javascript:;" class="active">首页</a></li>
+                        <li class="record1"><a href="javascript:;">新闻</a></li>
+                        <li class="record1"><a href="javascript:;">随笔</a></li>
+                        <li class="record1"><a href="javascript:;">日志</a></li>
+                        <li class="record2" id="myComments"><a href="javascript:;">我评</a></li>
+                        <li class="record2" id="myRecommends"><a href="javascript:;">我赞</a></li>
+                    </ul>
+                </div>
+                <div class="headline">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="title">【编辑推荐】基于C#的机器学习--面部和动态检测-图像过滤器</span>
+                                <span class="count">(4/1137)</span>
+                            </a>
+                            <a href="#">»</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="title">[最多推荐]我们为什么要搞长沙.NET技术社区？</span>
+                                <span class="count">(25/2273)</span>
+                            </a>
+                            <a href="#">»</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="postlist">
+                    <div id="post_item"></div>
+                    <script id="post_item_tmp" type="text/html">
+                    {{each data d}}
+                    <div class="post_item">
+                        <div class="digg">
+                            <div class="recommand">
+                                <span class="recommand_num" id="recommend" data-postid="{{d.postId}}" data-id = "{{d.categoryId1}}">{{d.recommend}}</span>
+                                <span class="recomm"><img src="images/ding.png" alt="">推荐</span>
+                            </div>
+                            <div class="recommand_tip">
+                                请先<a href="user/login.html">登录</a>
+                            </div>
+                        </div>
+                        <div class="post_item_body">
+                            <h3>
+                                <a class="titlelnk" href="article/index.html?{{d.postId}}" target="_blank">{{d.title}}</a>
+                            </h3>
+                            <p class="post_item_summary clearfix">
+                                <a href="#" target="_blank">
+                                    <img src="{{d.logo}}">
+                                </a>
+                                {{d.summary}}
+                            </p>
+                            <div class="post_item_foot">
+                                <a href="#" class="lightblue">{{d.nickname}}</a>
+                                发布于 {{d.createTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}
+                                <span class="article_comment">
+                                    <img src="images/recommand.png" alt="">
+                                    <a href="article/index.html?{{d.postId}}#comment" class="gray">评论({{d.comment}})</a>
+                                </span>
+                                <span class="article_view">
+                                    <img src="images/read.png" alt="">
+                                    <a href="article/index.html?{{d.postId}}" class="gray">阅读({{d.read}})</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                    </script>
+
+                    <div id="my_comments"></div>
+                    <script id="my_comments_tmp" type="text/html">
+                        {{each data d}}
+                        <div class="my_comment">
+                            <div class="c_user_logo clearfix">
+                                <div class="c_logo"><img src="{{d.logo ? d.logo : 'images/logo_small_default.jpg' }}" alt=""></div>
+                                    <div class="c_user">
+                                        <p class="c_nickname">{{d.nickname?d.nickname:d.account}}</p>
+                                        <p class="c_post_time">{{d.aCreateTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}</p>
+                                    </div>
+                                </div>
+                                <div class="c_content">
+                                    <div class="c_title">
+                                        <span>文章标题：</span> <a href="article/index.html?{{d.articleId}}">{{d.title}}</a> 
+                                        </div>
+                                    <div class="c_comment">
+                                        <span>评论内容：</span>
+                                        {{@d.comment}}
+                                        </div>
+                                    <div class="c_info clearfix">
+                                        <span class="c_comment_time"><span>评论时间：</span> {{d.cCreateTime | dateFormat2 "YYYY-MM-DD hh:mm:ss"}}</span>
+                                        <span class="c_good_bad">
+                                            <a href="javascript:;" class="c_good">支持({{d.good}})</a>
+                                            <a href="javascript:;" class="c_bad">反对({{d.bad}})</a>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </script>
+
+                    <div class="paging_block" id="pager">
+                        <script id="pager_tmp" type="text/html">
+                            <div class="pager">
+                                <a href="javascript:;" class="prev">&lt; Prev</a>
+                                {{each page p}}
+                                <a href="javascript:;" class="pageNum">{{p}}</a>
+                                {{/each}}
+                                <a href="javascript:;" class="next">Next &gt;</a>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="showSideBar">
+                    <p class="p1">
+                        <<</p> <p class="p2">打开快捷选单
+                    </p>
+                </div>
+                <div class="sideBar">
+                    <a href="javascript:;" class="close">&times;</a>
+                    <ul>
+                        <li><a href="user/personal.html" class="access"><span>个人中心</span></a></li>
+                        <li>
+                            <a href="#" class="access search"><span>搜索文章</span></a>
+                            <input type="text" id="searchArticles" placeholder="请输入关键字"><i class="searchBtn" data-id="1">Go</i>
+                        </li>
+                        <li><a href="mil/search.html" class="access"><span>搜索军事</span></a></li>
+                        <li><a href="#" class="access search"><span>搜索新闻</span></a>
+                            <input type="text" id="searchNews" placeholder="请输入关键字"><i class="searchBtn" data-id="2">Go</i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            友情链接：
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+            <a href="#" target="_blank">友情链接1</a>
+        </div>
+
+        <div id="footer_bottom">
+            <div>
+                <a href="#">我的新闻网</a>
+                <a href="#">联系我</a>
+                <a href="#">李先豪</a>保留所有权利
+                <a href="#" target="_blank">xICP备xxxxxxxx号</a>
+            </div>
+            <div>
+                <a href="#" target="_blank">
+                    <img class="cnnic_img" src="images/cnnic.png">
+                </a>
+                <a href="#" target="_blank">
+                    <span style="color:#939393;">x公网安备xxxxxxxxxxxxxx号</span>
+                    <img class="ghs" src="images/ghs.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".showSideBar").click(function () {
+            $(".sideBar").toggleClass("show");
+            if ($(".sideBar").hasClass("show")) {
+                $(this).css("display", "none");
+            }
+        })
+        $(".close").click(function () {
+            $(".showSideBar").css("display", "block");
+            $(".sideBar").toggleClass("show");
+            $(".sideBar input").hide(500);
+            $(".sideBar .searchBtn").hide(500);
+        })
+        $(".access").mousemove(function (e) {
+            var x = e.pageX - $(e.target).offset().left;
+            var y = e.pageY - $(e.target).offset().top;
+            // console.log(x + "----" + y);
+            $(e.target).css({
+                "--x": `${y}px`,
+                "--y": `${x}px`
+            })
+        })
+        $(".search").click(function () {
+            $(".sideBar input").hide(500);
+            $(".sideBar .searchBtn").hide(500);
+            $(this).siblings("input").show().focus();
+            $(this).siblings(".searchBtn").show();
+        })
+
+    </script>
+</body>
+
+</html>

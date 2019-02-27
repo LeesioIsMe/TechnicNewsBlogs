@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻网-军事</title>
+    <link rel="stylesheet" href="../css/mil/index.css">
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/mil/mainPage.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="hdtop clearfix">
+                <div class="hdtop clearfix">
+                    <ul class="login-reg clearfix">
+                        <li class="login"><a href="../user/login.html">登录</a></li>
+                        <li class="register"><a href="../user/reg.html">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hdnav">
+                <ul class="clearfix">
+                    <li><a href="#">首页</a><i class="rectangle"></i></li>
+                    <li><a href="../index.html">技术</a><i class="rectangle"></i></li>
+                    <li class="active"><a href="#">军事</a><i class="rectangle"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="adver">
+                <ul>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1415257041,2209538500&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 充电站加盟 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=15695664,2214064562&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 品牌与vi设计 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=162521548,1237672732&fm=76.jpg" alt="">
+                                <span> 云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1856712755,2524302953&fm=76.jpg" alt="">
+                                <span> 什么叫云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 什么叫云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=314941839,4209468223&fm=76.jpg" alt="">
+                                <span> 购买云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 购买云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3188015811,3629696707&fm=76.jpg" alt="">
+                                <span> 云存储 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云存储</span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3841287824,53714327&fm=76.jpg" alt="">
+                                <span> 课程教育研究 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 课程教育研究 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="closebg"><a href="#"></a></div>
+                <div class="feedback">
+                    <div class="title">反馈意见：</div>
+                    <div class="fbItems">
+                        <a href="#">视觉干扰</a>
+                        <a href="#">内容不宜</a>
+                        <a href="#">不感兴趣</a>
+                        <a href="#">其他原因</a>
+                    </div>
+                    <div class="return"><a href="javascript:;">返回</a></div>
+                </div>
+            </div>
+            <div class="slideNews clearfix">
+                <h1><a href="#">能携50枚核弹头？美媒离谱炒作中国造“最大洲际导弹”</a></h1>
+                <div class="slider" id="slider">
+                    <script id="slider_tmp" type="text/html">
+                    <ul>
+                        {{ each data d }}
+                        <li>
+                            <a href="newsdetail.html?slideNews&{{d.id}}">
+                                <img src="{{d.src}}" alt="">
+                                <span>{{d.title}}</span>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <div class="dot">
+                        <a href="javascript:;" class="current"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="btn">
+                        <a href="javascript:;" class="prev"><i></i></a>
+                        <a href="javascript:;" class="next"><i></i></a>
+                        <div class="prev-img">
+                            {{each data d}}
+                            <img src="{{d.src}}" alt="">
+                            {{/each}}
+                        </div>
+                        <div class="next-img">
+                            {{each data d}}
+                            <img src="{{d.src}}" alt="">
+                            {{/each}}
+                        </div>
+                    </div>
+                    </script>
+                </div>
+                <script>
+                    $(function () {
+                        $.get(`${host}/milNews/getSlideNews`).done(data => {
+                            // console.log(data);
+                            if (data.code != 200) {
+                                $("#slider").html(data.message);
+                                return;
+                            }
+                            $("#slider").html(template("slider_tmp", { data: data.slideNews }))
+                        }).fail(err => {
+                            throw err;
+                        })
+                    })
+
+                </script>
+                <div class="sideNews" id="sideNews">
+                    <script id="sideNews_tmp" type="text/html">
+                    <ul>
+                        {{each data d}}
+                        <li>
+                            <h4><a href="#">{{d.title}}</a></h4>
+                            <p>{{d.info}}<a href="../mil/newsdetail.html?sideNews&{{d.id}}" class="detail">[详细]</a></p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    </script>
+                </div>
+                <script>
+                    $(function () {
+                        $.get(`${host}/milNews/getSideNews`).done(data => {
+                            // console.log(data);
+                            if (data.code != 200) {
+                                $("#sideNews").html(data.message);
+                                return;
+                            }
+                            $("#sideNews").html(template("sideNews_tmp", { data: data.sideNews }))
+                        }).fail(err => {
+                            throw err;
+                        })
+                    })
+
+                </script>
+            </div>
+            <div class="weapon">
+                <div class="weapon-title clearfix">
+                    <h2><a href="#"> 世界兵器库：<span>为天下军迷，倾力打造环球第一兵器数据引擎！</span></a></h2>
+                    <div class="search">
+                        <input id="searchKey" type="text" name="searchKey" value="歼-20">
+                        <button id="searchBtn" type="submit">搜兵器</button>
+                    </div>
+                </div>
+                <div class="weapon-list clearfix">
+                    <ul class="clearfix">
+                        <li class="clearfix">
+                            <div class="i1 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i2 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i3 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i4  item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i5 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i6 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i7 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="i8 item-title"><a href="#"></a></div>
+                            <div class="item-content clearfix">
+                                <a href="#">福克50运输机肯尼亚坠毁</a>
+                                <a href="#">二战名机修复后重返天空</a>
+                                <a href="#">迅速武装伊拉克政府军的苏25</a>
+                                <a href="#">将亮相珠海航展T50教练机</a>
+                                <a href="#">日本人口中以1击20的F22</a>
+                                <a href="#">更多</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="milNews">
+                <div class="dynamic">
+                    <h3 class="clearfix">
+                        <a href="#">军情动态</a>
+                        <a href="#">更多</a>
+                    </h3>
+                    <div id="dynamic"></div>
+                    <script id="dynamic_tmp" type="text/html">
+                        <ul>
+                            <li class="firstNews">
+                                <a href="newsdetail.html?dynamicnews&{{data[0].id}}">
+                                    {{data[0].title}}</a>
+                                <div class="firstDetail clearfix">
+                                    <img src="{{data[0].src}}" alt="">
+                                    <div>
+                                        {{data[0].content.substr(0,50)}}
+                                        <a href="javascript:;">[详细]</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            {{each data d i}}
+                                {{ if(i != 0)}}
+                                <li>
+                                    <a href="newsdetail.html?dynamicNews&{{d.id}}">
+                                        {{d.title}}</a>
+                                </li>
+                                {{/if}}
+                            {{/each}}
+                        </ul>
+                    </script>
+                    <script>
+                        $.get(`${host}/milNews/getDynamicNews`).done(data => {
+                            if (data.code != 200) {
+                                $("#dynamic").html("数据出错");
+                                return;
+                            }
+                            $("#dynamic").html(template("dynamic_tmp", { data: data.dynamicNews }));
+                        }).fail(err => {
+                            throw err;
+                        })
+                    </script>
+                </div>
+                <div class="pattern">
+                    <h3 class="clearfix">
+                        <a href="#">战略格局</a>
+                        <a href="#">更多</a>
+                    </h3>
+                    <ul>
+                        <li class="firstNews">
+                            <a href="#">中国委内瑞拉石油换贷款协议的真相在这里</a>
+                            <div class="firstDetail clearfix">
+                                <img src="../images/mil/images/milNews/20180914012750478.png" alt="">
+                                <div>
+                                    马杜罗近来一直指责美国试图侵略委内瑞拉，他在11日接受国家电视台采访时将目前委内瑞拉...
+                                    <a>[详细]</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">回望百年杀戮现场，今人需要明白什么？</a>
+                        </li>
+                        <li>
+                            <a href="#">贸易战或变成美对华全面战略遏制的社会动员</a>
+                        </li>
+                        <li>
+                            <a href="#">与外部不友好势力博弈、斗争的内力来自何方？</a>
+                        </li>
+                        <li>
+                            <a href="#">中期选举前 朝鲜送特朗普一份大礼的可能极大</a>
+                        </li>
+                        <li>
+                            <a href="#">难民问题与民粹主义 正在欧洲形成恶性螺旋</a>
+                        </li>
+                        <li>
+                            <a href="#">叙利亚局势中的五方博弈 伊德利卜成为风暴眼</a>
+                        </li>
+                        <li>
+                            <a href="#">中国社会流露出“恐美心态”而实际情况却是</a>
+                        </li>
+                        <li>
+                            <a href="#">国内民企哀鸿遍野？专家：信心是个很大问题！</a>
+                        </li>
+                        <li>
+                            <a href="#">深度解读中美两国碰撞与交融 中国胜在一个字</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cm">
+                    <h3 class="clearfix">
+                        <a href="#">军民融合</a>
+                        <a href="#">更多</a>
+                    </h3>
+                    <ul>
+                        <li class="firstNews">
+                            <a href="#">1979年中美通航飞机餐成挑战 “001号合资企业”北京航食破困局</a>
+                            <div class="firstDetail clearfix">
+                                <img src="../images/mil/images/milNews/20190111100040536.jpg" alt="">
+                                <div>
+                                    共同品鉴其研发生产的航空美食，见证北京航食的发...
+                                    <a>[详细]</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">头条寻人帮87岁台湾老兵找到亲人 三十年前善行乡亲至今感念</a>
+                        </li>
+                        <li>
+                            <a href="#">中国组建无人机系统公司 布局打造世界一流出口基地</a>
+                        </li>
+                        <li>
+                            <a href="#">拒绝奢华 墨西哥新任总统准备卖掉前任专机</a>
+                        </li>
+                        <li>
+                            <a href="#">加拿大宇航员成功升空与“太空经济”</a>
+                        </li>
+                    </ul>
+                    <div class="bigImg">
+                        <a href="#"><img src="../images/mil/images/milNews/20171221011159382.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fastNews">
+                <h3 class="clearfix">
+                    <a href="#">军事速递</a>
+                    <a href="#">更多</a>
+                </h3>
+                <div id="fastNews"></div>
+                <script id="fastNews_tmp" type="text/html">
+                <ul>
+                    {{each data d}}
+                    <li>
+                        <a class="pic" href="detail.html?{{d.id}}">
+                            <img src="../images/mil/{{d.src}}" alt="">
+                            <div>
+                                <img src="../images/mil/images/fastNews/20170303021217291.png" alt="">
+                            </div>
+                        </a>
+                        <a class="pic-title" href="#">
+                            {{d.title}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+                </script>
+                <script>
+                    $.get(`${host}/milNews/getFastNews`).done(data => {
+                        if (data.code != 200) {
+                            $("#fastNews").html("数据出错");
+                            return;
+                        }
+                        $("#fastNews").html(template("fastNews_tmp", { data: data.fastNews }));
+                    })
+                </script>
+            </div>
+            <div class="adver">
+                <ul>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1415257041,2209538500&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 充电站加盟 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=15695664,2214064562&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 品牌与vi设计 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=162521548,1237672732&fm=76.jpg" alt="">
+                                <span> 云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1856712755,2524302953&fm=76.jpg" alt="">
+                                <span> 什么叫云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 什么叫云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=314941839,4209468223&fm=76.jpg" alt="">
+                                <span> 购买云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 购买云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3188015811,3629696707&fm=76.jpg" alt="">
+                                <span> 云存储 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云存储</span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3841287824,53714327&fm=76.jpg" alt="">
+                                <span> 课程教育研究 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 课程教育研究 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="closebg"><a href="#"></a></div>
+                <div class="feedback">
+                    <div class="title">反馈意见：</div>
+                    <div class="fbItems">
+                        <a href="#">视觉干扰</a>
+                        <a href="#">内容不宜</a>
+                        <a href="#">不感兴趣</a>
+                        <a href="#">其他原因</a>
+                    </div>
+                    <div class="return"><a href="javascript:;">返回</a></div>
+                </div>
+            </div>
+            <div class="picNews">
+                <h3 class="clearfix">
+                    <a href="#">图说军事</a>
+                    <a href="#">更多</a>
+                </h3>
+                <div id="picNews"></div>
+                <script id="picNews_tmp" type="text/html">
+                <ul>
+                    {{each data d}}
+                    <li>
+                        <a class="pic" href="#">
+                            <img src="{{d.src}}" alt="">
+                        </a>
+                        <a class="pic-title" href="#">
+                            {{d.title}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+                </script>
+                <script>
+                    $.get(`${host}/milNews/getPicNews`).done(data => {
+                        if (data.code != 200) {
+                            $("#picNews").html("数据出错");
+                            return;
+                        }
+                        $("#picNews").html(template("picNews_tmp", { data: data.picNews }));
+                    })
+                </script>
+            </div>
+
+
+            </script>
+            <div class="adver">
+                <ul>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1415257041,2209538500&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 充电站加盟 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=15695664,2214064562&fm=76.jpg" alt="">
+                                <span> 充电站加盟 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 品牌与vi设计 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=162521548,1237672732&fm=76.jpg" alt="">
+                                <span> 云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=1856712755,2524302953&fm=76.jpg" alt="">
+                                <span> 什么叫云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 什么叫云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=314941839,4209468223&fm=76.jpg" alt="">
+                                <span> 购买云服务器 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 购买云服务器 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3188015811,3629696707&fm=76.jpg" alt="">
+                                <span> 云存储 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 云存储</span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="one">
+                            <a href="#">
+                                <img src="../images/mil/images/adver/u=3841287824,53714327&fm=76.jpg" alt="">
+                                <span> 课程教育研究 </span>
+                            </a>
+                        </div>
+                        <div class="two">
+                            <a href="">
+                                <span> 课程教育研究 </span>
+                                <span class="adverbg"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="closebg"><a href="#"></a></div>
+                <div class="feedback">
+                    <div class="title">反馈意见：</div>
+                    <div class="fbItems">
+                        <a href="#">视觉干扰</a>
+                        <a href="#">内容不宜</a>
+                        <a href="#">不感兴趣</a>
+                        <a href="#">其他原因</a>
+                    </div>
+                    <div class="return"><a href="javascript:;">返回</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="product">
+                <dl class="dl1 clearfix">
+                    <dt>其他政策</dt>
+                    <dd><a href="#">其他的政策1</a></dd>
+                    <dd><a href="#">其他的政策2</a></dd>
+
+                </dl>
+                <dl class="dl2 clearfix">
+                    <dt>推荐服务</dt>
+                    <dd><a href="#">推荐服务1</a></dd>
+                    <dd><a href="#">推荐服务2</a></dd>
+                    <dd><a href="#">推荐服务3</a></dd>
+                    <dd><a href="#">推荐服务4</a></dd>
+
+                </dl>
+                <dl class="dl3 clearfix">
+                    <dt>其他服务产品</dt>
+                    <dd><a href="#">其他服务产品1</a></dd>
+                    <dd><a href="#">其他服务产品2</a></dd>
+                    <dd><a href="#">其他服务产品3</a></dd>
+                    <dd><a href="#">其他服务产品4</a></dd>
+                    <dd><a href="#">其他服务产品5</a></dd>
+                    <dd><a href="#">其他服务产品6</a></dd>
+                    <dd><a href="#">其他服务产品7</a></dd>
+                    <dd><a href="#">其他服务产品8</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="links">
+            <div>
+                <ul>
+                    <li><a href="#">链接1</a></li>
+                    <li><a href="#">链接2</a></li>
+                    <li><a href="#">链接3</a></li>
+                    <li><a href="#">链接4</a></li>
+                    <li><a href="#">链接5</a></li>
+                    <li><a href="#">链接6</a></li>
+                    <li><a href="#">链接7</a></li>
+                    <li><a href="#">链接8</a></li>
+                    <li><a href="#">链接9</a></li>
+                    <li><a href="#">链接10</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="scrollBar">
+            <a href="#"></a>
+        </div>
+    </div>
+</body>
+
+</html>

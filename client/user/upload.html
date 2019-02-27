@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传头像</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/jquery.html5uploader.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+    <style>
+        .container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo{
+            display:none;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            border:1px solid #ccc;
+            margin-bottom:10px;
+            cursor:pointer;
+        }
+        #box img{
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box"><img src="/images/upload.jpg" alt=""></div>
+        <input id="logo" type="file">
+    </div>
+
+    <script>
+        $(function () {
+            $("#box").click(function(){
+                $("#logo").trigger("click")
+            })
+            checkLogin();
+            $("#box,#logo").html5Uploader({
+                name: "foo",
+                postUrl: `${host}/users/upload`,
+                onSuccess: function (data, file, data) {
+                    console.log(data);
+                    data = JSON.parse(data);
+                    console.log(data);
+                    if (data.code == 202) {
+                        location.href = 'login.html'
+                        return;
+                    }
+                    $("#box").html(`
+                        <img src="${data.logoPath}">
+                    `)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布文章</title>
+    <link rel="stylesheet" href="../css/post_article.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.min.js"></script>
+    <script src="../js/layer/layer.js"></script>
+    <script src="../js/art-template.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/purl.min.js"></script>
+
+    <script type="text/javascript" src="../js/wangEditor.min.js"></script>
+    <script src="../js/post_article.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bg">
+            <div class="header">
+                <div class="options">
+                    <div class="type">
+                        <label>类型</label>
+                        <select name="type1" id="type1"></select>
+                        <select name="type2" id="type2"></select>
+                        <select name="type3" id="type3"></select>
+                    </div>
+                    <div class="title">
+                        <label for="title">标题</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                </div>
+
+                <div class="backTo">
+                    <a href="/">返回主页</a>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <form id="postForm">
+                <p>主题内容</p>
+                <div class="summary">
+                    <label for="summary">摘要</label>
+                    <textarea name="summary" id="summary" cols="60" rows="10" maxlength="200"></textarea>
+                </div>
+                <!-- 2. 创建视图容器 -->
+                <div id="editor"></div>
+                <script type="text/javascript">
+                    var E = window.wangEditor
+                    var editor = new E('#editor')
+                    // 或者 var editor = new E( document.getElementById('editor') )
+                    editor.create()
+                </script>
+
+                <div class="btn">
+                    <button id="btnPost" type="submit">提交</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

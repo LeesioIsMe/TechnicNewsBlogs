@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    clear: both;
+    content: '';
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.header {
+    background: #333;
+    font-size: 12px;
+}
+
+.header .hdtop {
+    width: 1000px;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    background: #333;
+    position: relative;
+}
+
+.header .hdtop ul {
+    float: right;
+}
+
+.header .hdtop ul li {
+    float: left;
+    margin-left: 10px;
+    width: 62px;
+    height: 45px;
+    text-align: center;
+}
+
+.header .hdtop ul li a {
+    color: #fff;
+}
+
+.header .login {
+    background: #917347;
+}
+
+.header .login img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.header .me {
+    background: rgba(0, 0, 0, 0.3);
+    height: 40px;
+}
+
+.header .account a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header .logout a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#smlogo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -5px;
+    left: -10px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+#logo {
+    display: none;
+}
+
+.header .hdtop .logo {
+    width: 115px;
+    height: 40px;
+    background: #4e4e4e;
+    position: relative;
+}
+
+.header .hdtop .logo a {
+    background-image: url(../../images/mil/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: 20px -48px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.header .hdtop .logo .icon {
+    background-image: url(../../images/mil/images/icon.png);
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-position: 0 -1368px;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+}
+
+.header .hdtop .logo:hover {
+    background: #7f7f7f;
+}
+
+.header .hdtop .logo:hover .icon {
+    background-position: 0 -1398px;
+}
+
+.header .hdtop .register:hover {
+    background: #999;
+}
+
+.content .search {
+    width: 1000px;
+    margin: 10px auto;
+    height: 32px;
+    position: relative;
+}
+
+.content form {
+    width: 192px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../../images/mil/images/mil2015.png) 0 -35px no-repeat;
+}
+
+.content .search input {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.content .search input:nth-of-type(1) {
+    width: 152px;
+    color: rgb(44, 38, 36);
+    background: #f2f2f2;
+    padding-left: 5px;
+}
+
+.content .search input:nth-of-type(2) {
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.content .nav {
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    background: #f2f2f2;
+    font-size: 14px;
+}
+
+.content .nav .title {
+    width: 200px;
+    height: 25px;
+    background: url(../../images/mil/images/search/searchTop.png) no-repeat;
+    position: absolute;
+    top: -25px;
+    left: 0;
+}
+
+.content .nav .navLogo {
+    width: 168px;
+    height: 58px;
+    background: url(../../images/mil/images/military-logo.png) no-repeat;
+}
+
+.content .nav .navList {
+    padding: 10px 0;
+}
+
+.content .nav .navList li {
+    padding: 0 10px;
+    height: 80px;
+    line-height: 30px;
+}
+
+.content .nav .navList, .content .nav .navList ul, .content .nav .navList ul li dl {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content .nav .navList dt a, .content .nav .navList dd a {
+    padding: 0 10px 0 0;
+    margin: 0 5px 0 0;
+}
+
+.content .nav .navList dt a {
+    color: #333;
+    font-weight: bold;
+}
+
+.content .nav .navList dd a {
+    color: #666;
+}
+
+.director {
+    width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.director .dirLinks {
+    float: left;
+    font-size: 12px;
+}
+
+.director .dirLinks a {
+    color: #999;
+    height: 30px;
+    line-height: 30px;
+}
+
+.director .weaponLinks {
+    float: right;
+    background: url(../../images/mil/images/search/weapon_navBG_2015_3_10.png) no-repeat;
+    width: 388px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.director .weaponLinks a {
+    float: right;
+    padding: 0 17px;
+    color: #333;
+}
+
+.director .weaponLinks .qq, .director .weaponLinks .wg {
+    color: #208edc;
+}
+
+.searchContent {
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchContent .sideBar {
+    width: 200px;
+}
+
+.searchContent .sideBar div {
+    height: 56px;
+    width: 150px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: #ccc 1px 1px 4px;
+    padding: 0 0 0 15px;
+    line-height: 56px;
+}
+
+.searchContent .sideBar div a {
+    color: #333;
+    padding: 0px 0 0 10px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    border-left: 6px solid #ffa219;
+}
+
+.searchContent .sideBar div a i {
+    font-style: normal;
+}
+
+.searchContent .sideBar .sideBar-rl a {
+    border-left: 6px solid #c8c8c8;
+}
+
+.searchContent .res {
+    width: 800px;
+}
+
+.searchContent .result, .searchContent .result-error {
+    width: 800px;
+    background: #fefefe;
+    border: 1px solid #ddd;
+    box-shadow: #ccc 1px 1px 5px;
+    padding: 20px;
+}
+
+.searchContent .result h2, .searchContent .result-error h2 {
+    font-size: 26px;
+    font-weight: normal;
+    text-shadow: #666 1px 1px 4px;
+    margin-bottom: 20px;
+}
+
+.searchContent .result h2 a {
+    color: #333;
+}
+
+.searchContent .result .rImg {
+    float: left;
+    width: 200px;
+}
+
+.searchContent .result .rDetail {
+    width: 530px;
+    float: right;
+    font-size: 14px;
+    line-height: 26px;
+    text-indent: 2em;
+}
+
+.footer {
+    background: #0a70b1;
+}
+
+.footer .product {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer .product dl {
+    margin: 10px 0;
+    padding: 0 40px;
+    border-left: 1px solid #3288bf;
+}
+
+.footer .product dl dt {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer .product .dl1 {
+    width: 200px;
+}
+
+.footer .product .dl2 {
+    width: 300px;
+}
+
+.footer .product .dl2 dd {
+    width: 100px;
+    margin-right: 9px;
+}
+
+.footer .product .dl3 {
+    width: 500px;
+}
+
+.footer .product .dl3 dd {
+    padding: 0 10px 0 0;
+    margin-right: 10px;
+}
+
+.footer .product dl dd {
+    float: left;
+    font-size: 12px;
+}
+
+.footer .product dl dd a {
+    color: #89c3eb;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+
+.footer .product dl dd a:hover {
+    color: #f0f0f0;
+}
+
+.footer .product dl dd a:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    background-image: url(../../images/mil/images/icon2.png);
+    background-position: 0 -173px;
+    display: inline-block;
+}
+
+.links {
+    background: #f0f0f0;
+}
+
+.links div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.links div ul {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.links div ul li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.links div ul li:after {
+    content: "/";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    color: #999;
+}
+
+.links div ul li a {
+    color: #666;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.links div ul li a:hover {
+    color: #d00005;
+    text-decoration: underline;
+}
+
+.scrollBar {
+    width: 70px;
+    height: 70px;
+    background: url(../../images/mil/images/index.png) -80px -747px no-repeat;
+    position: absolute;
+}
