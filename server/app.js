@@ -14,6 +14,10 @@ var milNewsRouter = require("./routes/milNews")
 
 var app = express();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

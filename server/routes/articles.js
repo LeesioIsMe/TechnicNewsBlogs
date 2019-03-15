@@ -28,23 +28,34 @@ router.post("/postArticle", checkLogin, (req, res, next) => {
 
 router.get("/getArticles/:categoryId?", function (req, res, next) {
     var categoryId = req.params.categoryId - 0;
+<<<<<<< HEAD
     console.log(categoryId)
     var pageSize = req.query.pageSize - 0;
     var pageCount = req.query.pageCount - 0;
     var currentPage = req.query.currentPage - 0;
     var keywords = req.query.keywords;
     var condition = { sql: "select * from articles" }
+=======
+    // console.log(categoryId)
+    var pageSize = req.query.pageSize - 0;
+    var pageCount = req.query.pageCount - 0;
+    var currentPage = req.query.currentPage - 0;
+    var condition = { sql: "select * from article" }
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
     if (categoryId) {
         condition = {
             sql: "select a.id postId,a.categoryId1,a.title,a.content,a.summary,a.recommend,a.comment,a.read,a.against,a.createTime,u.id,u.account,u.nickname,u.logo from articles a inner join users u on categoryId1 = ? and a.userId = u.id order by createTime desc limit ?,?",
             values: [categoryId, pageSize * (currentPage - 1), pageSize]
         }
+<<<<<<< HEAD
         if (keywords) {
             condition = {
                 sql: `select a.id postId,a.categoryId1,a.title,a.content,a.summary,a.recommend,a.comment,a.read,a.against,a.createTime,u.id,u.account,u.nickname,u.logo from articles a inner join users u on categoryId1 = ? and a.userId = u.id where a.title like '%${keywords}%' order by createTime desc limit ?,?`,
                 values: [categoryId, pageSize * (currentPage - 1), pageSize]
             }
         }
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
     }
     pool.query({
         sql: "select count(*) as count from articles where categoryId1 = ?",
@@ -97,8 +108,13 @@ router.post("/updateArticle", checkLogin, (req, res, next) => {
     if (recommend) {
         attrName = "recommend";
         pool.query({
+<<<<<<< HEAD
             sql: "select id from user_recommend  where account = ? and articleId = ? union select id from user_against  where account = ? and articleId = ?",
             values: [account, postId, account, postId]
+=======
+            sql: "select id from user_recommend where account = ? and articleId = ?",
+            values: [account, postId]
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
         }, (err, results) => {
             if (err) {
                 res.json({ code: 201, message: "数据库操作失败" + err }); return;
@@ -136,10 +152,15 @@ router.post("/updateArticle", checkLogin, (req, res, next) => {
                     })
 
                 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
             }
         })
     } else if (against) {
         attrName = "against";
+<<<<<<< HEAD
         pool.query({
             sql: "select id from user_recommend where account = ? and articleId = ? union select id from user_against where account = ? and articleId = ?",
             values: [account, postId, account, postId]
@@ -184,6 +205,27 @@ router.post("/updateArticle", checkLogin, (req, res, next) => {
         })
     }
 })
+=======
+        var condition = {
+            sql: `update articles set ${attrName} = ${attrName} + 1 where id = ${postId}`,
+        }
+        // console.log(condition)
+        pool.query(condition, (err, results) => {
+            if (err) {
+                res.send({ code: 201, message: "数据库操作失败" + err });
+                return;
+            }
+            // console.log(results);
+            res.send({
+                code: 200,
+                message: "操作成功"
+            })
+        })
+    }
+
+})
+
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 router.get("/getCounts", (req, res, next) => {
     pool.query({
         sql: "select c.typeName,count(a.id) count from articles a,categories c where c.id = a.categoryId1 group by typeName"

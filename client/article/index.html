@@ -88,7 +88,10 @@
                             <div class="comment_info clearfix">
                                 <span class="comment_time"><a href="#floor{{i + 1}}">#{{i + 1}}楼</a>&emsp;  {{d.createTime | dateFormat2 "YYYY-MM-DD hh:mm"}}&emsp; <a href="#">{{d.nickname}}</a> <a href="" class="msg"></a></span>
                                 <span class="comment_options"><a id="response" href="#myEditor" data-nickname="{{d.nickname}}">回复</a></span>
+<<<<<<< HEAD
                                 <span class="comment_options"><a id="deleteComment" href="javascript:;" data-nickname="{{d.nickname}}" data-id="{{d.id}}">删除</a></span>
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                             </div>
                             <div class="comment_content">
                                 {{@d.comment}}
@@ -195,7 +198,10 @@
                 throw err;
             })
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
         $(function () {
             // console.log($.url());
             getContent();
@@ -251,9 +257,13 @@
                     // console.log(data);
                     if (data.code == 200) {
                         getContent();
+<<<<<<< HEAD
                         return;
                     }
                     layer.alert(data.message)
+=======
+                    }
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                 }).fail(err => {
                     throw err;
                 })
@@ -270,9 +280,13 @@
                     // console.log(data);
                     if (data.code == 200) {
                         getContent();
+<<<<<<< HEAD
                         return;
                     }
                     layer.alert(data.message)
+=======
+                    }
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                 }).fail(err => {
                     throw err;
                 })
@@ -296,6 +310,7 @@
                 console.log($(this).data("nickname"))
                 um.setContent("<span class='response_target'>@" + $(this).data("nickname") + "</span>:")
             })
+<<<<<<< HEAD
             $("#comment").on("click", "#deleteComment", function () {
                 var commentId = $(this).data("id");
                 $.post(`${host}/comments/deleteComment`, {
@@ -312,6 +327,8 @@
                     throw err;
                 })
             })
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
             $("#btnSubmit").click(function () {
                 console.log(userId)
                 var content = um.getContent();

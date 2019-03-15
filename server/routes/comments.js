@@ -91,6 +91,7 @@ router.post("/updateComment", checkLogin, (req, res, next) => {
     }
 })
 
+<<<<<<< HEAD
 router.get("/getMyComments", checkLogin, (req, res, next) => {
     var account = req.query.account;
     if (!account) {
@@ -154,4 +155,6 @@ router.post("/deleteComment", checkLogin, (req, res) => {
 
     })
 })
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 module.exports = router;

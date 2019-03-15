@@ -5,7 +5,11 @@
 
 html, body {
     color: #000;
+<<<<<<< HEAD
     background: rgba(240, 240, 240, 0.1);
+=======
+    background: #fff;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 body {
@@ -94,6 +98,7 @@ a:link, a:visited {
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 .ads a {
     display: inline-block;
     width: 300px;
@@ -115,6 +120,8 @@ a:link, a:visited {
     height: 70px;
 }
 
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 .header .nav {
     background-color: #2b6695;
     margin: 5px 0 0 0;
@@ -147,7 +154,11 @@ a:link, a:visited {
 
 .main .left {
     width: 160px;
+<<<<<<< HEAD
     background: #fff;
+=======
+    background: #eeeeff;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 .left .menu {
@@ -403,9 +414,13 @@ a:link, a:visited {
     margin: 10px 0;
     line-height: 1.8em;
     width: calc(100% - 60px);
+<<<<<<< HEAD
     word-wrap: break-word;
     word-break: break-all;
     overflow: hidden;
+=======
+    word-wrap: break-word;word-break: break-all;overflow: hidden;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 .post_item_summary a {
@@ -429,6 +444,7 @@ a:link, a:visited {
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 .my_comment {
     width: 800px;
     border: 1px solid #ccc;
@@ -487,6 +503,8 @@ a:link, a:visited {
     float: right;
 }
 
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 .paging_block .pager {
     font-size: 12px;
     margin: 25px 0;
@@ -515,7 +533,11 @@ a:link, a:visited {
 
 .main .right {
     width: 300px;
+<<<<<<< HEAD
     background-color: #eeeeef;
+=======
+    background-color: #eeeeff;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 .right .item {
@@ -603,6 +625,7 @@ a:link, a:visited {
 
 #footer_bottom .ghs {
     vertical-align: middle;
+<<<<<<< HEAD
 }
 
 .right {
@@ -763,4 +786,6 @@ a:link, a:visited {
     left: 0;
     border-radius: 50%;
     text-align: center;
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }

@@ -12,9 +12,12 @@
     <script src="../js/layer/layer.js"></script>
     <script src="../js/art-template.js"></script>
     <script src="../js/common.js"></script>
+<<<<<<< HEAD
     <script src="../js/vue.js"></script>
     <script src="../js/axios.min.js"></script>
     <script src="../js/lodash.min.js"></script>
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 
 </head>
 
@@ -36,20 +39,29 @@
                 <form id="regForm">
                     <div class="group">
                         <label for="account">账号<span></span></label>
+<<<<<<< HEAD
                         <input type="text" name="account" id="account" v-model="account">
                         <em class="em">{{em1}}</em>
                         <em class="typing">{{typing1}}</em>
+=======
+                        <input type="text" name="account" id="account">
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                     </div>
 
                     <div class="group">
                         <label for="pwd1">密码<span></span></label>
+<<<<<<< HEAD
                         <input type="password" name="password" id="pwd1" v-model="password1">
                         <em class="em">{{em2}}</em>
                         <em class="typing">{{typing2}}</em>
+=======
+                        <input type="password" name="password" id="pwd1">
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                     </div>
 
                     <div class="group">
                         <label for="pwd2">确认密码<span></span></label>
+<<<<<<< HEAD
                         <input type="password" name="confirmPassword" id="pwd2" v-model="password2">
                         <div id="imgCode"></div>
                         <em class="em">{{em3}}</em>
@@ -60,6 +72,14 @@
                         <input type="text" name="email" id="email" v-model="email">
                         <em class="em">{{em4}}</em>
                         <em class="typing">{{typing4}}</em>
+=======
+                        <input type="password" name="confirmPassword" id="pwd2">
+                        <div id="imgCode"></div>
+                    </div>
+                    <div class="group">
+                        <label for="email">邮箱<span></span></label>
+                        <input type="text" name="email" id="email">
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                     </div>
                     <div class="group captcha">
                         <label for="captcha">验证码<span></span></label>
@@ -80,6 +100,7 @@
     <script>
         $(function () {
             getImgCode();
+<<<<<<< HEAD
             var accountPattern = /^[0-9A-z]{1}[0-9A-z]{4,15}$/;
             var emailPattern = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
             var passwordPattern = /^[0-9A-z_]{6,16}$/;
@@ -212,6 +233,50 @@
                 }
             })
 
+=======
+            $("#btnRegTemp").click(function () {
+                $("#btnReg").trigger("click")
+            })
+            $("#imgCode").on("click", "svg", function () {
+                getImgCode();
+            });
+            $("#regForm").submit(function (ev) {
+                ev.preventDefault();
+                if ($("#pwd1").val() != $("#pwd2").val()) {
+                    layer.alert("两次密码不一致", {
+                        icon: 2,
+                        title: "错误"
+                    })
+                    return;
+                }
+                if(!$("#email").text().trim()){
+                    layer.alert("邮箱必填",{
+                        icon:4,
+                        title:"错误"
+                    })
+                }
+                console.log($("#captcha").val())
+                $.post(`${host}/users/register`, $(this).serialize()).done(function (data) {
+                    console.log(data);
+                    if (data.code != 200) {
+                        layer.alert(data.message, {
+                            icon: 2,
+                            title: "提示"
+                        })
+                        return;
+                    }
+                    layer.alert("注册成功，3秒后跳转至<a href='login.html'>登录</a>", {
+                        icon: 1,
+                        title: "提示"
+                    })
+                    setTimeout(function () {
+                        location.href = "login.html";
+                    }, 3000)
+                }).fail(function (err) {
+                    throw err;
+                })
+            })
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
         })
     </script>
 </body>

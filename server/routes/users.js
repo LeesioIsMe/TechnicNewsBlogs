@@ -14,6 +14,7 @@ var path = require("path");
 var storage = multer.diskStorage({
   destination: path.join(path.resolve(__dirname + "../../../"), "/client/images/logo"),
   filename: function (req, file, callback) {
+<<<<<<< HEAD
     var extendName = file.originalname.substr(file.originalname.lastIndexOf("."));
     var nameSpace = [".jpg",".jepg",".png",".webp"];
     console.log(extendName)
@@ -21,6 +22,8 @@ var storage = multer.diskStorage({
       callback(new Error("图片格式错误"));
       return;
     }
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
     var newFileName = Date.now() + "-" + req.cookies.account + "-" + file.originalname;
     callback(null, newFileName);
   }
@@ -99,9 +102,13 @@ router.post('/register', function (req, res, next) {
   var captcha = req.body.captcha.toUpperCase();
   var confirmPassword = req.body.confirmPassword;
   var email = req.body.email;
+<<<<<<< HEAD
 
   console.log(account,password,confirmPassword,email)
   
+=======
+  console.log(account,password,confirmPassword,email)
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
   if (!account || !password || !confirmPassword || !email) {
     res.json({ code: 201, message: '账号、密码和邮箱不能为空！' })
     return;
@@ -115,7 +122,10 @@ router.post('/register', function (req, res, next) {
     res.json({ code: 201, message: "验证码错误" });
     return;
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
   password = md5(password);
 
   pool.query({

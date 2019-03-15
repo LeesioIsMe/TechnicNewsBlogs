@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
 }
+<<<<<<< HEAD
 
 .container {
     height: 100vh;
@@ -11,6 +12,14 @@ body {
     -o-background-size: cover;
 }
 
+=======
+.container {
+    height:100vh;
+    background: url(../images/login_bg2.jpg) no-repeat;
+}
+
+
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 .header-bg {
     background: rgba(0, 150, 200, 0.5);
     box-shadow: rgba(0, 150, 200, 0.5) 5px 5px 20px;
@@ -30,6 +39,7 @@ body {
     font-size: 36px;
     font-family: 楷体;
 }
+<<<<<<< HEAD
 
 .header .options {
     font-size: 12px;
@@ -53,6 +63,26 @@ body {
     color: darkred;
 }
 
+=======
+.header .options{
+    font-size:12px;
+}
+.header .options a{
+    color:rgb(0,255,255);
+    text-decoration: none;
+}
+.header .options i:after{
+    margin:0 10px;
+    content:"|";
+    font-size:16px;
+    font-style: normal;
+    color:rgb(255,255,255,0.3);
+    width:1px;
+}
+.header .options a:hover{
+    color:darkred;
+}
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 .main {
     display: flex;
     justify-content: center;
@@ -69,7 +99,11 @@ body {
     margin-right: 10px;
     text-align: center;
     margin-top: 70px;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.7);
+=======
+    background:rgba(255,255,255,0.7);
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 .info .group label {
@@ -85,11 +119,19 @@ body {
 }
 
 .info .group.remember {
+<<<<<<< HEAD
     height: 45px;
     text-align: initial;
     padding: 0 0 0 130px;
     font-size: 14px;
 }
+=======
+    height:45px;
+    text-align: initial;
+    padding:0 0 0 130px;
+    font-size:14px;
+}    
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 
 .info .group input:not([name="remember"]) {
     position: relative;
@@ -104,17 +146,26 @@ body {
 
 .info .btn {
     text-align: center;
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+    margin-top:10px;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 }
 
 .info .btn a {
     background: rgb(57, 197, 250);
     padding: 10px 20px;
+<<<<<<< HEAD
     border-radius: 3px;
+=======
+    border-radius:3px;
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
     text-decoration: none;
     color: #fff;
 }
 
+<<<<<<< HEAD
 .info #getBack {
     background: unset;
     color: rgb(14, 161, 230);
@@ -126,6 +177,17 @@ body {
     color: darkred;
 }
 
+=======
+.info #getBack{
+    background:unset;
+    color:rgb(14, 161, 230);
+    font-size:14px;
+    margin-left:20px;
+}
+.info #getBack:hover{
+    color:darkred;
+}
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
 .sideImg {
     width: 200px;
     margin-top: 60px;

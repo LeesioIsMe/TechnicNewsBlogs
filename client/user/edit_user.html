@@ -83,7 +83,11 @@
     </script>
     <script>
         $(function () {
+<<<<<<< HEAD
             // console.log($.cookie("userInfo"))
+=======
+            console.log($.cookie("userInfo"))
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
             var logo = JSON.parse($.cookie("userInfo")).logo;
             var account = $.cookie("account");
             $("#smlogo").attr("src", logo);
@@ -124,7 +128,10 @@
                         location.href = 'login.html'
                         return;
                     }
+<<<<<<< HEAD
                     console.log($.error())
+=======
+>>>>>>> 10d3ebffec26455b5747750ab5de693a4e62af13
                     $("#box").html(`
                             <img src="${data.logoPath}">
                         `)
